@@ -47,6 +47,8 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
 
     private AppBarConfiguration mAppBarConfiguration;
 
+    int i = 0;
+
     private NavigationView nvMainNavigation;
     private TextView tvNavUsername;
     private TextView tvNavEmail;
