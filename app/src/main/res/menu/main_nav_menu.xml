@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Screens">
+        <menu>
+            <item
+                android:id="@+id/navigation_main_home"
+                android:title="@string/menu_main_home" />
+
+            <item
+                android:id="@+id/navigation_main_tutorial"
+                android:title="@string/menu_main_tutorial" />
+
+        </menu>
+    </item>
+
+    <item android:title="Account">
+    <menu>
+        <item
+            android:id="@+id/navigation_main_login"
+            android:title="@string/menu_main_login" />
+
+        <item
+            android:id="@+id/navigation_main_register"
+            android:title="@string/menu_main_register" />
+
+        <item
+            android:id="@+id/navigation_main_logout"
+            android:title="@string/menu_main_logout" />
+    </menu>
+    </item>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/navigation_main_settings"
+                android:title="@string/menu_main_settings" />
+            <item
+                android:id="@+id/navigation_main_about"
+                android:title="@string/menu_main_about" />
+        </menu>
+    </item>
+
+</menu>

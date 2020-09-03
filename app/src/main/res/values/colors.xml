@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="palette_a_pink_swan">#C2B2B4</color>
+    <color name="palette_a_salt_box">#6B4E71</color>
+    <color name="palette_a_oxford_blue">#3a4454</color>
+    <color name="palette_a_blue_bayoux">#53687e</color>
+    <color name="palette_a_vanilla_ice">#f5dddd</color>
+    <color name="palette_a_black_squeeze">#f5f9fb</color>
+
+</resources>
