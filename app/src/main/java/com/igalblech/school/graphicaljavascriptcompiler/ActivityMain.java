@@ -47,8 +47,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    int i = 0;
-
     private NavigationView nvMainNavigation;
     private TextView tvNavUsername;
     private TextView tvNavEmail;
@@ -64,7 +62,8 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         setSupportActionBar ( toolbar );
 
         ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
+        if (actionbar != null)
+            actionbar.setDisplayHomeAsUpEnabled(true);
 
         DrawerLayout drawer = findViewById ( R.id.drawer_layout );
         NavigationView navigationView = findViewById ( R.id.nav_view );
@@ -80,8 +79,10 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,
                 drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(actionBarDrawerToggle);
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setHomeButtonEnabled(true);
+        if (actionbar != null) {
+            actionbar.setDisplayHomeAsUpEnabled ( true );
+            actionbar.setHomeButtonEnabled ( true );
+        }
 
         ActivityCompat.requestPermissions(this,
                 new String[]{
@@ -123,7 +124,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
 
         int id = menuItem.getItemId();
         Fragment fragment = null;
-        Intent intent = null;
 
         switch (id) {
             case R.id.navigation_main_home:
@@ -152,11 +152,9 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.nav_host_fragment, fragment);
             ft.commit();
-        } else if (intent != null) {
-            startActivity(intent);
         }
         else
-            return true;
+            return false;
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer( GravityCompat.START);
