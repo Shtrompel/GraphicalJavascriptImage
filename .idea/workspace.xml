@@ -10,9 +10,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d79dd5b-9ea3-4a88-a2d8-ee302c3ea291" name="Default Changelist" comment="Poop and pee 3">
+    <list default="true" id="9d79dd5b-9ea3-4a88-a2d8-ee302c3ea291" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +23,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_7_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="12f39ddd" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -35,14 +35,16 @@
     <favorites_list name="GraphicalJavascriptImage" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+            <state relative-caret-position="127">
+              <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#6180#6181#0" expanded="true" />
+                <element signature="e#6219#6220#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,6 +165,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GraphicalJavascriptImage" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,17 +219,6 @@
             <path>
               <item name="GraphicalJavascriptImage" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GraphicalJavascriptImage" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -407,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599163301796</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="OwO">
+      <created>1599331750349</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599331750349</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -434,15 +443,15 @@
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.3294893" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.3294893" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.32920355" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.3294893" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3294893" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="6" visible="true" weight="0.32920355" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32920355" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.33451328" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.3294893" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" weight="0.3294893" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3294893" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.3294893" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32920355" />
       <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5046296" side_tool="true" weight="0.33054712" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -497,7 +506,8 @@
     <MESSAGE value="Poop and pee" />
     <MESSAGE value="Poop and pee 2" />
     <MESSAGE value="Poop and pee 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poop and pee 3" />
+    <MESSAGE value="OwO" />
+    <option name="LAST_COMMIT_MESSAGE" value="OwO" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
@@ -783,10 +793,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+        <state relative-caret-position="127">
+          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6180#6181#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
           </folding>
         </state>
       </provider>
