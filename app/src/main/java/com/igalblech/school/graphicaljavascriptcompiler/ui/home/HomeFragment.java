@@ -1,5 +1,6 @@
 package com.igalblech.school.graphicaljavascriptcompiler.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.igalblech.school.graphicaljavascriptcompiler.ActivityMain;
+import com.igalblech.school.graphicaljavascriptcompiler.ActivityProject;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 
@@ -45,13 +48,20 @@ public class HomeFragment extends Fragment implements ActivityBase {
     @Override
     public void addBehaviourToViews() {
 
-
         btnMainExit.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick ( View view ) {
                 getActivity ().finish();
                 getActivity().moveTaskToBack(true);
                 System.exit(0);
+            }
+        } );
+
+        btnMainCreateNew.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View v ) {
+                Intent intent = new Intent ( getActivity (), ActivityProject.class );
+                startActivity ( intent );
             }
         } );
     }

@@ -32,8 +32,6 @@ import com.igalblech.school.graphicaljavascriptcompiler.ui.login.LoginFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.register.RegisterFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial.TutorialFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.UserData;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.UserDataValidator;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.UserDataDatabase;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -52,6 +50,8 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
     private TextView tvNavEmail;
 
     private UserData userData = null;
+
+
 
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="25dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create A New Project"
+        android:textSize="25dp"
+        android:padding="5dp"
+        />
+
+    <EditText
+        android:id="@+id/etPopupProjectBits"
+        android:text=""
+        android:hint="Channel Bits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/tvPopupProjectColorModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Color Model"
+        android:textSize="15sp"
+        android:padding="5dp"
+        />
+
+    <CheckBox
+        android:id="@+id/cbPopupProjectHasAlpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Has Alpha"
+        android:textSize="15sp"
+        android:padding="5dp"
+        />
+
+    <CheckBox
+        android:id="@+id/cbPopupProjectIsFloat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is Float"
+        android:textSize="15sp"
+        android:padding="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+        <Button
+            android:text="Cancel"
+            android:id="@+id/tvPopupProjectCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            />
+
+        <Button
+            android:text="Create"
+            android:id="@+id/tvPopupProjectCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

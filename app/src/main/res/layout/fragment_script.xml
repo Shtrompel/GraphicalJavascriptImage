@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            style="?android:attr/buttonBarStyle"
+            android:id="@+id/btnExecute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="Execute" />
+
+        <Button
+            style="?android:attr/buttonBarStyle"
+            android:id="@+id/btnSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="Settings" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        >
+
+        <com.igalblech.school.graphicaljavascriptcompiler.views.CodeLineText
+            android:id="@+id/cltScript"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="start|top"
+            android:minWidth="25dp"
+            android:maxWidth="25dp"
+            android:background="#eeeeee"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:lines="15"
+            />
+
+    <com.igalblech.school.graphicaljavascriptcompiler.views.CodeEditText
+        android:id="@+id/cetScript"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="start|top"
+        android:minWidth="1000dp"
+        android:background="#eeeeee"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:lines="15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:layout_margin="10dp"
+            />
+
+        <Button
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share On Gallery"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
