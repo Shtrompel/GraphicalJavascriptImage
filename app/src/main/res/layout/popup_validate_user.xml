@@ -4,22 +4,24 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:layout_gravity="center">
-
+    android:layout_gravity="center"
+    style="?android:attr/buttonBarStyle">
 
     <TextView
         android:id="@+id/tvValidateUser"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="An clarification code was send to your email. Please write it down here." />
+        android:text="@string/tv_validate_user" />
 
     <EditText
         android:id="@+id/etValidateUserCode"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:inputType="number" />
+        android:hint="@string/code"
+        android:inputType="number"
+        android:autofillHints="" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,28 +30,33 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnValidateUserApply"
+            android:id="@+id/btnValidateUserCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apply" />
+            android:text="@string/cancel"
+            style="?android:attr/buttonBarButtonStyle"/>
 
         <Button
             android:id="@+id/btnValidateUserResendSMS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resend SMS" />
+            android:text="@string/btn_validate_user_resend_sms"
+            style="?android:attr/buttonBarButtonStyle"/>
 
         <Button
             android:id="@+id/btnValidateUserResendEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resend Email" />
+            android:text="@string/btn_validate_user_resend_email"
+            style="?android:attr/buttonBarButtonStyle"/>
 
         <Button
-            android:id="@+id/btnValidateUserCancel"
+            android:id="@+id/btnValidateUserApply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel" />
+            android:text="@string/apply"
+            style="?android:attr/buttonBarButtonStyle"/>
+
 
 
     </LinearLayout>

@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 
 import java.nio.Buffer;
 
@@ -15,9 +14,9 @@ import lombok.Setter;
 
 public class BitmapView extends View {
 
-    private Rect box;
+    private final Rect box;
     @Setter private Bitmap bitmap;
-    private Paint paint;
+    private final Paint paint;
 
     public BitmapView( Context context){
         this(context, null);
@@ -37,19 +36,21 @@ public class BitmapView extends View {
         paint.setFilterBitmap(false);
     }
 
-    public void setSize(int w, int h) {
-
-        LayoutParams params = getLayoutParams();
-        params.width = w;
-        params.height = h;
-        setLayoutParams(params);
-
-        setMinimumWidth(w);
-        setMinimumHeight (h);
-
-        box.right = w;
-        box.bottom = h;
-    }
+// --Commented out by Inspection START (28/10/2020 14:07):
+//    public void setSize(int w, int h) {
+//
+//        LayoutParams params = getLayoutParams();
+//        params.width = w;
+//        params.height = h;
+//        setLayoutParams(params);
+//
+//        setMinimumWidth(w);
+//        setMinimumHeight (h);
+//
+//        box.right = w;
+//        box.bottom = h;
+//    }
+// --Commented out by Inspection STOP (28/10/2020 14:07)
 
     public void passByteBuffer( Buffer byteBuffer, int w, int h ) {
         if (byteBuffer != null) {
@@ -64,7 +65,8 @@ public class BitmapView extends View {
         super.onDraw ( canvas );
 
         if (bitmap != null)
-            canvas.drawBitmap(bitmap, new Rect (0,0,box.right,box.bottom), box, paint);
+            canvas.drawBitmap(bitmap, box, box, paint);
+        //canvas.drawBitmap(bitmap, new Rect (0,0,box.right,box.bottom), box, paint);
     }
 
     @Override

@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_project_script"
-        android:title="Script"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:title="@string/script"
+        android:icon="@drawable/ic_notifications_black_24dp"/>
 
     <item
         android:id="@+id/navigation_project_render"
-        android:title="Render"
+        android:title="@string/render"
         android:icon="@drawable/ic_launcher_background"/>
 
     <item
         android:id="@+id/navigation_project_error"
-        android:title="Error"
+        android:title="@string/error"
         android:icon="@drawable/ic_launcher_background"/>
 
 </menu>

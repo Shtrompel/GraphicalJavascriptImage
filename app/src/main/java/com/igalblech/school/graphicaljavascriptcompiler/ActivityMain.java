@@ -2,10 +2,8 @@ package com.igalblech.school.graphicaljavascriptcompiler;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -31,30 +29,28 @@ import com.igalblech.school.graphicaljavascriptcompiler.ui.home.HomeFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.login.LoginFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.register.RegisterFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial.TutorialFragment;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.UserData;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-// xes
-// Main
 public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         ActivityBase {
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    private NavigationView nvMainNavigation;
     private TextView tvNavUsername;
     private TextView tvNavEmail;
 
     private UserData userData = null;
 
-
+    // --Commented out by Inspection (28/10/2020 14:07):public static ActivityMain activityMain;
 
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {
+
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
 
@@ -97,9 +93,8 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         initializeViews();
     }
 
-    @Override
     public void initializeViews() {
-        nvMainNavigation =  findViewById(R.id.nav_view);
+        NavigationView nvMainNavigation = findViewById ( R.id.nav_view );
 
         View headerView = nvMainNavigation.getHeaderView (0);
 
@@ -107,10 +102,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         tvNavEmail = headerView.findViewById(R.id.tvNavEmail);
     }
 
-    @Override
-    public void addBehaviourToViews() {
-
-    }
 
     @Override
     public boolean onSupportNavigateUp ( ) {
@@ -122,30 +113,23 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected ( @NonNull MenuItem menuItem ) {
 
-        int id = menuItem.getItemId();
+        final int id = menuItem.getItemId();
         Fragment fragment = null;
 
-        switch (id) {
-            case R.id.navigation_main_home:
-                fragment = new HomeFragment ( );
-                break;
-            case R.id.navigation_main_about:
-                fragment = new AboutFragment ();
-                break;
-            case R.id.navigation_main_tutorial:
-                fragment = new TutorialFragment();
-                break;
-            case R.id.navigation_main_login:
-                fragment = new LoginFragment();
-                break;
-            case R.id.navigation_main_logout:
-                showLogoutConfirmation();
-                break;
-            case R.id.navigation_main_register:
-                fragment = new RegisterFragment();
-                break;
-            default:
-                return false;
+        if (id == R.id.navigation_main_home) {
+            fragment = new HomeFragment ( );
+        } else if (id == R.id.navigation_main_about) {
+            fragment = new AboutFragment ( );
+        } else if (id == R.id.navigation_main_tutorial) {
+            fragment = new TutorialFragment ( );
+        } else if (id == R.id.navigation_main_login) {
+            fragment = new LoginFragment ( );
+        } else if (id == R.id.navigation_main_logout) {
+            showLogoutConfirmation ( );
+        } else if (id == R.id.navigation_main_register) {
+            fragment = new RegisterFragment ( );
+        } else {
+            return false;
         }
 
         if (fragment != null) {
@@ -192,6 +176,10 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         dialog.setNegativeButton("Cancel", ( dialog12, which ) ->{});
         AlertDialog alertDialog=dialog.create();
         alertDialog.show();
+    }
+
+    public UserData getUserData() {
+        return userData;
     }
 
 }

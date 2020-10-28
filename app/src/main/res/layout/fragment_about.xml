@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -17,12 +15,13 @@
 
         <ImageView
             android:id="@+id/imageView2"
+            android:contentDescription="@string/hamoud_habibi_description"
             android:layout_width="210dp"
             android:layout_height="144dp"
             android:layout_margin="@dimen/default_margin"
             app:srcCompat="@drawable/hamoud_habibi" />
 
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/bigger_margin"
@@ -32,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/default_margin"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:scaleType="centerCrop"
                 android:textColor="@color/palette_a_vanilla_ice"
                 android:text="@string/about_string" />

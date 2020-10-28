@@ -6,13 +6,11 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,49 +22,38 @@ import androidx.lifecycle.ViewModelProviders;
 import com.igalblech.school.graphicaljavascriptcompiler.ActivityMain;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.CodeGenerator;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.GMailSender;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.UserData;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.UserDataValidator;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.UserDataDatabase;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.contact.CodeGenerator;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataValidator;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataDatabase;
 
 import lombok.Getter;
 import lombok.Setter;
 
 public class LoginFragment extends Fragment implements ActivityBase {
 
-    private com.igalblech.school.graphicaljavascriptcompiler.ui.login.LoginViewModel loginViewModel;
     private View root;
 
     private EditText etLoginUsername;
     private EditText etLoginPassword;
     private Button btnLoginApply;
-    private ProgressBar pbLogin;
     private TextView tvForgotPassword;
 
     private EditText etLoginForgotPasswordEmail;
     private EditText etLoginForgotPasswordPhone;
-    private Button btnLoginForgotPasswordSend;
     private TextView etLoginForgotPasswordCode;
-    private Button btnLoginForgotPasswordApply;
-    private Button btnLoginForgotPasswordCancel;
 
     private EditText etLoginNewPassword;
     private EditText etLoginNewPasswordConfirm;
-    private Button btnLoginNewPasswordApply;
 
     private EditText etValidateUserCode;
-    private Button btnValidateUserApply;
-    private Button btnValidateUserCancel;
-    private Button btnValidateUserResendSMS;
-    private Button btnValidateUserResendEmail;
 
     private UserDataDatabase userDataManager;
 
     public View onCreateView ( @NonNull LayoutInflater inflater,
                                ViewGroup container, Bundle savedInstanceState ) {
-        loginViewModel =
-                ViewModelProviders.of ( this ).get ( com.igalblech.school.graphicaljavascriptcompiler.ui.login.LoginViewModel.class );
+        //LoginViewModel loginViewModel =
+        ViewModelProviders.of ( this ).get ( LoginViewModel.class );
         root = inflater.inflate ( R.layout.fragment_login, container, false );
 
         userDataManager = new UserDataDatabase(getContext());
@@ -76,15 +63,11 @@ public class LoginFragment extends Fragment implements ActivityBase {
 
         return root;
     }
-
-
-    @Override
     public void initializeViews() {
 
         etLoginUsername = root.findViewById(R.id.etLoginUsername);
         etLoginPassword = root.findViewById(R.id.etLoginPassword);
         btnLoginApply = root.findViewById(R.id.btnLoginApply);
-        pbLogin = root.findViewById(R.id.pbLogin);
         tvForgotPassword = root.findViewById(R.id.tvForgotPassword);
 
         SpannableString content = new SpannableString(getResources().getString(R.string.forgot_password      ));
@@ -93,9 +76,7 @@ public class LoginFragment extends Fragment implements ActivityBase {
 
     }
 
-    @Override
     public void addBehaviourToViews() {
-
         btnLoginApply.setOnClickListener( view -> {
 
             if (((ActivityMain)getActivity ()).hasUser ()) {
@@ -113,15 +94,8 @@ public class LoginFragment extends Fragment implements ActivityBase {
                 Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
 
                 ((ActivityMain)getActivity ()).updateUser ( userData );
-                /*
-                TextView tvNavUsername = getActivity().findViewById(R.id.tvNavUsername);
-                tvNavUsername.setText(userData.getUsername());
-                TextView tvNavEmail = getActivity().findViewById(R.id.tvNavEmail);
-                tvNavEmail.setText(userData.getEmail());
-                */
 
                 if (!userData.isVerified()) {
-
                     generateCode (userData);
 
                     sendCodeToUser (
@@ -151,10 +125,10 @@ public class LoginFragment extends Fragment implements ActivityBase {
 
         etLoginForgotPasswordEmail = dialogView.findViewById(R.id.etLoginForgotPasswordEmail);
         etLoginForgotPasswordPhone = dialogView.findViewById(R.id.etLoginForgotPasswordPhone);
-        btnLoginForgotPasswordSend = dialogView.findViewById(R.id.btnLoginForgotPasswordSend);
+        Button btnLoginForgotPasswordSend = dialogView.findViewById ( R.id.btnLoginForgotPasswordSend );
         etLoginForgotPasswordCode = dialogView.findViewById(R.id.etLoginForgotPasswordCode);
-        btnLoginForgotPasswordApply = dialogView.findViewById(R.id.btnLoginForgotPasswordApply);
-        btnLoginForgotPasswordCancel = dialogView.findViewById(R.id.btnLoginForgotPasswordCancel);
+        Button btnLoginForgotPasswordApply = dialogView.findViewById ( R.id.btnLoginForgotPasswordApply );
+        Button btnLoginForgotPasswordCancel = dialogView.findViewById ( R.id.btnLoginForgotPasswordCancel );
 
         btnLoginForgotPasswordSend.setOnClickListener( view -> {
             String phone   = etLoginForgotPasswordPhone.getText ().toString ();
@@ -217,7 +191,7 @@ public class LoginFragment extends Fragment implements ActivityBase {
 
         etLoginNewPassword = dialogView.findViewById(R.id.etLoginNewPassword);
         etLoginNewPasswordConfirm = dialogView.findViewById(R.id.etLoginNewPasswordConfirm);
-        btnLoginNewPasswordApply = dialogView.findViewById(R.id.btnLoginNewPasswordApply);
+        Button btnLoginNewPasswordApply = dialogView.findViewById ( R.id.btnLoginNewPasswordApply );
 
         btnLoginNewPasswordApply.setOnClickListener( view -> {
 
@@ -252,10 +226,10 @@ public class LoginFragment extends Fragment implements ActivityBase {
         alertDialog.setCanceledOnTouchOutside(false);
 
         etValidateUserCode = dialogView.findViewById(R.id.etValidateUserCode);
-        btnValidateUserApply = dialogView.findViewById(R.id.btnValidateUserApply);
-        btnValidateUserCancel = dialogView.findViewById(R.id.btnValidateUserCancel);
-        btnValidateUserResendSMS = dialogView.findViewById(R.id.btnValidateUserResendSMS);
-        btnValidateUserResendEmail = dialogView.findViewById(R.id.btnValidateUserResendEmail);
+        Button btnValidateUserApply = dialogView.findViewById ( R.id.btnValidateUserApply );
+        Button btnValidateUserCancel = dialogView.findViewById ( R.id.btnValidateUserCancel );
+        Button btnValidateUserResendSMS = dialogView.findViewById ( R.id.btnValidateUserResendSMS );
+        Button btnValidateUserResendEmail = dialogView.findViewById ( R.id.btnValidateUserResendEmail );
 
         btnValidateUserApply.setOnClickListener( view -> {
             if (userData.getVerificationCode ( ).equals ( etValidateUserCode.getText ( ).toString ( ) )) {
@@ -366,9 +340,9 @@ public class LoginFragment extends Fragment implements ActivityBase {
         @Override
         protected Void doInBackground ( SendVerificationMailParams... params ) {
 
-            if (params[0] == null)
-                return null;
-
+            //if (params[0] == null)
+            //  return null;
+/*
             GMailSender sender = new GMailSender (
                     "GraphicCubeApp@gmail.com",
                     "0n93y7g5h3" );
@@ -385,7 +359,7 @@ public class LoginFragment extends Fragment implements ActivityBase {
                 Log.d ( "developer", e.toString ( ) );
                 e.printStackTrace ( );
             }
-
+*/
             return null;
         }
     }

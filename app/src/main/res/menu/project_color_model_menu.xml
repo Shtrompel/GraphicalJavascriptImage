@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Gray"
+        android:title="@string/gray"
         android:orderInCategory="0"
         />
 
     <item
-        android:title="RGB"
+        android:title="@string/rgb"
         android:orderInCategory="1"
         />
 
     <item
-        android:title="HSV"
+        android:title="@string/hsv"
         android:orderInCategory="2"
         />
 

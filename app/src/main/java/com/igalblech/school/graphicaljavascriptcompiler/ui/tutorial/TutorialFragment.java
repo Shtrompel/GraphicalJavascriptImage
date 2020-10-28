@@ -1,6 +1,5 @@
 package com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial;
 
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -20,9 +19,6 @@ import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 
 public class TutorialFragment extends Fragment implements ActivityBase, BottomNavigationView.OnNavigationItemSelectedListener {
 
-    public static final int PERMISSION_CODE = 42042;
-
-    private com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial.TutorialViewModel tutorialViewModel;
     private PDFView pdfView;
     private BottomNavigationView bottomNavigationView;
     private View root;
@@ -34,8 +30,8 @@ public class TutorialFragment extends Fragment implements ActivityBase, BottomNa
 
     public View onCreateView ( @NonNull LayoutInflater inflater,
                                ViewGroup container, Bundle savedInstanceState ) {
-        tutorialViewModel =
-                ViewModelProviders.of ( this ).get ( com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial.TutorialViewModel.class );
+        //TutorialViewModel tutorialViewModel =
+        ViewModelProviders.of ( this ).get ( TutorialViewModel.class );
         root = inflater.inflate ( R.layout.fragment_tutorial, container, false );
 
         initializeViews();
@@ -44,13 +40,11 @@ public class TutorialFragment extends Fragment implements ActivityBase, BottomNa
         return root;
     }
 
-    @Override
     public void initializeViews ( ) {
         pdfView = root.findViewById ( R.id.pdfViewTutorial );
         bottomNavigationView = root.findViewById ( R.id.navTutorial );
     }
 
-    @Override
     public void addBehaviourToViews ( ) {
 
 
@@ -87,14 +81,12 @@ public class TutorialFragment extends Fragment implements ActivityBase, BottomNa
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[],
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
-        if (requestCode == PERMISSION_CODE) {
-            if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        /*if (requestCode == PERMISSION_CODE && grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-            }
-        }
+        }*/
     }
 
 
@@ -113,22 +105,17 @@ public class TutorialFragment extends Fragment implements ActivityBase, BottomNa
     @Override
     public boolean onNavigationItemSelected ( @NonNull MenuItem menuItem ) {
 
-
-        switch (menuItem.getItemId ( )) {
-            case R.id.navigation_tutorial_layout:
-                openPDFFromRawResources( PDF_LAYOUT_ID );
-                break;
-            case R.id.navigation_tutorial_login:
-                openPDFFromRawResources( PDF_LOGIN_ID );
-                break;
-            case R.id.navigation_tutorial_project:
-                openPDFFromRawResources( PDF_PROJECT_ID );
-                break;
-            case R.id.navigation_tutorial_javascript:
-                openPDFFromRawResources( PDF_SCRIPTING_ID );
-                break;
-            default:
-                return false;
+        int itemId = menuItem.getItemId ( );
+        if (itemId == R.id.navigation_tutorial_layout) {
+            openPDFFromRawResources ( PDF_LAYOUT_ID );
+        } else if (itemId == R.id.navigation_tutorial_login) {
+            openPDFFromRawResources ( PDF_LOGIN_ID );
+        } else if (itemId == R.id.navigation_tutorial_project) {
+            openPDFFromRawResources ( PDF_PROJECT_ID );
+        } else if (itemId == R.id.navigation_tutorial_javascript) {
+            openPDFFromRawResources ( PDF_SCRIPTING_ID );
+        } else {
+            return false;
         }
         pdfView.loadPages ();
 

@@ -10,7 +10,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 public class CodeLineText extends AppCompatTextView {
 
-    private Paint paint, paintSelected;
+    private final Paint paint;
 
     public int scrollY;
     public int lineHeight;
@@ -25,7 +25,7 @@ public class CodeLineText extends AppCompatTextView {
         paint.setTextSize(20);
         paint.setTextAlign(Paint.Align.CENTER);
 
-        paintSelected = new Paint();
+        Paint paintSelected = new Paint ( );
         paintSelected.setStyle(Paint.Style.FILL);
         paintSelected.setColor(0xFFDDDDDD);
     }

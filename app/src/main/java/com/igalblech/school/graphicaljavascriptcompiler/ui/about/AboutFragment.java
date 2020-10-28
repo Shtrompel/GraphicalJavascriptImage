@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,29 +14,11 @@ import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 
 public class AboutFragment extends Fragment implements ActivityBase {
 
-    private AboutViewModel homeViewModel;
-    private View root;
-
     public View onCreateView ( @NonNull LayoutInflater inflater,
                                ViewGroup container, Bundle savedInstanceState ) {
-        homeViewModel =
-                ViewModelProviders.of ( this ).get ( AboutViewModel.class );
-        root = inflater.inflate ( R.layout.fragment_about, container, false );
+        //AboutViewModel homeViewModel =
+        ViewModelProviders.of ( this ).get ( AboutViewModel.class );
 
-        initializeViews();
-        addBehaviourToViews();
-
-        return root;
+        return inflater.inflate ( R.layout.fragment_about, container, false );
     }
-
-    @Override
-    public void initializeViews() {
-
-    }
-
-    @Override
-    public void addBehaviourToViews() {
-
-    }
-
 }

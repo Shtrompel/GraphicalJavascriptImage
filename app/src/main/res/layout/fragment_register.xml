@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".ActivityLogin"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@color/palette_a_black_squeeze"
-        >
+    tools:context=".ActivityMain"
+    android:orientation="vertical"
+    android:background="@color/palette_a_black_squeeze"
+    >
 
         <EditText
             android:id="@+id/etRegisterUsername"
@@ -22,25 +15,27 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:inputType="textPersonName"
-            android:hint="Username"/>
+            android:hint="@string/username"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/etRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
-            android:inputType="textPersonName"
-            android:hint="Email"/>
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            android:autofillHints="" />
 
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
-            android:hint="Phone (Like 012-123-4567)"
-            android:inputType="textPhonetic"
+            android:hint="@string/phone"
+            android:inputType="phone"
             android:id="@+id/etRegisterPhone"
-            />
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/etRegisterPassword"
@@ -48,22 +43,24 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:inputType="textPassword"
-            android:hint="Password"/>
+            android:hint="@string/password"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/etRegisterPasswordRepeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
-            android:hint="Repeat Password"
-            android:inputType="textPassword" />
+            android:hint="@string/et_register_password_repeat"
+            android:inputType="textPassword"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnRegisterApply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/bigger_margin"
-            android:text="Login" />
+            android:text="@string/login" />
 
         <ProgressBar
             android:id="@+id/pbRegister"
@@ -72,7 +69,5 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:visibility="invisible"/>
-
-</LinearLayout>
 
 </LinearLayout>

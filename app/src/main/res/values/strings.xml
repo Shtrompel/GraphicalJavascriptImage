@@ -25,5 +25,10 @@
     <string name="forgot_password">Forgot Password</string>
     <string name="menu_main_logout">Log Out</string>
 
+    <string name="project_title_request">Please add A title to your project</string>
+    <string name="project_cancel_button">Cancel</string>
+    <string name="project_save_button">Save</string>
+    <string name="project_project_description_edit_text">Project Description</string>
+    <string name="project_project_title_edit_text">Project Title</string>
 
 </resources>

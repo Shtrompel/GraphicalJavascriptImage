@@ -3,12 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center" >
+    android:gravity="center"
+    android:background="#FFBBBBBB">
 
     <TextView
         android:id="@+id/tvProjectError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
-        android:text="TextView" />
+        android:text="@string/tv_project_error" />
 </LinearLayout>

@@ -15,6 +15,8 @@ import android.view.MotionEvent;
 
 import androidx.appcompat.widget.AppCompatEditText;
 
+import lombok.Setter;
+
 /**
  * Author S Mahbub Uz Zaman on 5/9/15.
  * Lisence Under GPL2
@@ -24,15 +26,15 @@ import androidx.appcompat.widget.AppCompatEditText;
 
 public class CodeEditText extends AppCompatEditText {
 
-    private Paint paint, paintSelected;
-    private float textHeight, textOffset;
+    private final Paint paintSelected;
 
     private int selectedLine = -1;
-    private CodeLineText cltScript;
+    private @Setter
+    CodeLineText cltScript;
 
     public CodeEditText ( Context context, AttributeSet attrs) {
         super(context, attrs);
-        paint = new Paint();
+        Paint paint = new Paint ( );
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.BLACK);
         paint.setTextSize(20);
@@ -42,8 +44,8 @@ public class CodeEditText extends AppCompatEditText {
         paintSelected.setStyle(Paint.Style.FILL);
         paintSelected.setColor(0xFFDDDDDD);
 
-        textHeight = paint.descent() - paint.ascent();
-        textOffset = (textHeight / 2) - paint.descent();
+        //float textHeight = paint.descent ( ) - paint.ascent ( );
+        //float textOffset = (textHeight / 2) - paint.descent ( );
 
         addTextChangedListener(new TextWatcher() {
             @Override
@@ -51,13 +53,6 @@ public class CodeEditText extends AppCompatEditText {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-            public boolean isWorldAlone(Editable s, int start, int end) {
-                boolean sb, eb;
-                sb = start == 0 || s.charAt ( start-1) == ' ' || s.charAt ( start-1) == '\n';
-                eb = end == s.length () - 1 || s.charAt ( end+1) == ' ' || s.charAt ( end+1) == '\n';
-                return sb && eb;
-            }
 
             public void colorWord(Editable s, String word, int color, boolean sb, boolean sa) {
                 int index;
@@ -110,15 +105,16 @@ public class CodeEditText extends AppCompatEditText {
         selectedLine = count;
     }
 
-    public void setCodeLineText ( CodeLineText cltScript ) {
-        this.cltScript = cltScript;
-    }
-
     @Override
     public boolean onTouchEvent ( MotionEvent event ) {
         boolean ret = super.onTouchEvent ( event );
         updateSelectedLine();
         return ret;
+    }
+
+    @Override
+    public boolean performClick ( ) {
+        return super.performClick ( );
     }
 
     @Override
@@ -148,7 +144,7 @@ public class CodeEditText extends AppCompatEditText {
                 }
             }
             catch (IndexOutOfBoundsException e) {
-
+                e.printStackTrace ();
             }
         }
 
@@ -157,13 +153,14 @@ public class CodeEditText extends AppCompatEditText {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        if (cltScript != null) {
+            cltScript.scrollY = getScrollY ( );
+            cltScript.lineHeight = getLineHeight ( );
+            cltScript.baseline = getBaseline ( );
+            cltScript.lineCount = getLineCount ( );
 
-        cltScript.scrollY = getScrollY ();
-        cltScript.lineHeight = getLineHeight ();
-        cltScript.baseline = getBaseline ();
-        cltScript.lineCount = getLineCount ();
-
-        cltScript.invalidate ();
+            cltScript.invalidate ( );
+        }
 
         {
             float w = getWidth ( );

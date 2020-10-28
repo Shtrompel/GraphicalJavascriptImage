@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Base.Theme.AppCompat" parent="Base.V28.Theme.AppCompat"/>
-    <style name="Base.Theme.AppCompat.Light" parent="Base.V28.Theme.AppCompat.Light"/>
-
-</resources>

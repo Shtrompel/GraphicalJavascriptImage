@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,24 +20,22 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.ErrorFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.RenderFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.ScriptFragment;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.front.ProjectActivityPagerAdapter;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.front.RenderColorFormat;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectActivityPagerAdapter;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
 
+import java.lang.ref.WeakReference;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
+import lombok.Getter;
+
 public class ActivityProject extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private RenderColorFormat format;
+    private @Getter ProjectSettings settings;
 
-    public static class V8ScriptExecutionThread extends AsyncTask<V8ScriptExecutionThread.Arguments, Void, V8ScriptExecutionThread.Output> {
+    public static class V8ScriptExecutionThread extends AsyncTask<ProjectSettings, Integer, V8ScriptExecutionThread.Output> {
 
-        public static class Arguments {
-            public String script;
-            // Screen width, screen height
-            public int width, height;
-            public RenderColorFormat format;
-        }
+        // --Commented out by Inspection (28/10/2020 14:07):private Thread threadGetDoubles;
 
         public static class Output {
             public String error;
@@ -45,21 +44,22 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
             public boolean isError;
         }
 
-        private V8 runtime = null;
-        private ActivityProject activityProject;
+        private final WeakReference<ActivityProject> activityProject;
+        private final WeakReference<ProgressBar> progressBar;
 
-        public V8ScriptExecutionThread(ActivityProject activityProject) {
-            this.activityProject = activityProject;
-            //runtime.registerJavaMethod (  );
+        public V8ScriptExecutionThread(@NonNull ActivityProject activityProject, @NonNull ProgressBar progressBar ) {
+            this.activityProject = new WeakReference<> ( activityProject );
+            this.progressBar = new WeakReference<> ( progressBar );
         }
 
         @Override
         protected void onPreExecute ( ) {
             super.onPreExecute ( );
+            progressBar.get ().setVisibility(View.VISIBLE);
         }
 
         @Override
-        protected Output doInBackground ( Arguments... args ) {
+        protected Output doInBackground ( ProjectSettings... args ) {
 
             Output output = new Output();
             output.isError = false;
@@ -68,10 +68,9 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
 
             byte[] bytesArray = new byte[args[0].width * args[0].height * 4];
 
-            runtime = V8.createV8Runtime();
-            String script = args[0].script;
+            V8 runtime = V8.createV8Runtime ( );
+            String script = args[0].code + ScriptFragment.JS_CONST_EXECUTE_ARR;
 
-            boolean success = true;
             try {
                 runtime.executeVoidScript ( script );
             }
@@ -80,93 +79,90 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
                 if (output.error == null)
                     output.error = e.getJSMessage ();
                 output.isError = true;
-                success = false;
             }
 
-            if (success) {
-                for (int i = 0; i < args[0].width * args[0].height; i++) {
-                    int x = i % args[0].width;
-                    int y = i / args[0].height;
-                    V8Array params = new V8Array ( runtime ).push ( x ).push ( y );
-                    Object result;
-                    try {
-                        result = runtime.executeFunction ( "set", params );
-                    } catch (V8ScriptException e) {
-                        output.error = e.getJSStackTrace ();
-                        if (output.error == null)
-                            output.error = e.getJSMessage ();
-                        output.isError = true;
-                        break;
-                    } finally {
-                        params.release ();
-                    }
+            int width = args[0].width;
+            int height = args[0].height;
+            int count = args[0].format.channelCount;
+            int pixelCount = width * height;
 
-                    byte[] values = new byte[4];
-                    if (result instanceof Double) {
-                        Double v = (Double) result;
-                        values = args[0].format.createColor ( v );
-                    }
-                    else if (result instanceof Integer) {
-                        Integer v = (Integer) result;
-                        values = args[0].format.createColor ( v );
-                    }
-                    else if (result instanceof V8Array) {
-                        V8Array arr = (V8Array) result;
-                        double[] doubles = arr.getDoubles ( 0, arr.length () );
+            runtime.add ( "width", width );
+            runtime.add ( "height", height );
 
-                        if (doubles.length != args[0].format.channelCount) {
-                            String err = "";
-                            err += "Returned array has a wrong amount of channels! Array should has ";
-                            err += args[0].format.channelCount;
-                            err += " channels.";
-                            output.error = err;
-                            output.isError = true;
-                        }
-                        else {
-                            values = args[0].format.createColor ( doubles );
-                        }
-                        arr.release ();
-                    }
-                    else {
-                        output.error = "Wrong return type! Return type should be an array or a number.";
-                        output.isError = true;
-                        break;
-                    }
-
-                    if (output.isError)
-                        break;
-
-
-                    bytesArray[i * 4] = values[0];
-                    bytesArray[i * 4 + 1] = values[1];
-                    bytesArray[i * 4 + 2] = values[2];
-                    bytesArray[i * 4 + 3] = values[3];
+            long startTime = System.currentTimeMillis ( );
+            if (!output.isError) {
+                V8Array params = new V8Array ( runtime );
+                Object result = null;
+                try {
+                    result = runtime.executeFunction ( "executeArray", params );
+                } catch (V8ScriptException e) {
+                    output.error = e.getJSStackTrace ( );
+                    if (output.error == null)
+                        output.error = e.getJSMessage ( );
+                    output.isError = true;
+                } finally {
+                    params.release ( );
                 }
 
-                output.buffer = ByteBuffer.wrap ( bytesArray );
-            }
+                if (result instanceof V8Array) {
+                    V8Array arr = (V8Array) result;
+                    double[] doubles = arr.getDoubles ( 0, arr.length ( ) );
 
-            runtime.release ();
+                    int doublesPixel = 0;
+                    double[] values = new double[count];
+                    for (int i = 0; i < pixelCount; i++) {
+
+                        long timerTime = System.currentTimeMillis ( );
+                        if (timerTime - startTime > 1000) {
+                            startTime = System.currentTimeMillis ();
+                            publishProgress ( i );
+                        }
+
+                        for (int j = 0; j < count; j++)
+                            values[j] = doubles[doublesPixel++];
+
+                        byte[] bytes = args[0].format.createColor ( values );
+
+                        bytesArray[i * 4] = bytes[0];
+                        bytesArray[i * 4 + 1] = bytes[1];
+                        bytesArray[i * 4 + 2] = bytes[2];
+                        bytesArray[i * 4 + 3] = bytes[3];
+                    }
+                    arr.release ( );
+                }
+
+            }
+            output.buffer = ByteBuffer.wrap ( bytesArray );
+
+            runtime.release (true);
             return output;
         }
 
         @Override
         protected void onPostExecute ( Output s ) {
+
+            progressBar.get ().setVisibility(View.GONE);
             super.onPostExecute ( s );
 
-            activityProject.hideKeyboard ();
+            activityProject.get ().hideKeyboard ();
 
             if (s.isError) {
-                activityProject.changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_ERROR );
-                activityProject.updateError ( s.error );
+                activityProject.get ().changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_ERROR );
+                activityProject.get ().updateError ( s.error );
             }
             else if (s.buffer != null) {
-                activityProject.changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_RENDER );
-                activityProject.updateImage ( s.buffer, s.width, s.height );
-                activityProject.updateError ( "Program compiled successfully" );
+                activityProject.get ().changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_RENDER );
+                activityProject.get ().updateImage ( s.buffer, s.width, s.height );
+                activityProject.get ().updateError ( "Program compiled successfully" );
             }
 
 
+        }
+
+        @Override
+        protected void onProgressUpdate ( Integer... values ) {
+            super.onProgressUpdate ( values );
+            progressBar.get ().setProgress ( values[0] );
         }
     }
 
@@ -183,17 +179,9 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
 
         Bundle bundle = getIntent().getExtras();
 
-        String code = "";
         if (bundle != null) {
-            if (bundle.getString ( "script_code" ).equals ( null )) {
-                code = bundle.getString ( "script_code" );
-            }
-            if (bundle.get ( "format" ) != null) {
-                format = (RenderColorFormat) bundle.get ( "format" );
-            }
+            settings = (ProjectSettings) bundle.get ( "settings" );
         }
-        if (format == null)
-            format = new RenderColorFormat ( format.COLOR_MODEL_G, 8, false, true );
 
         vpProjectFragment = findViewById ( R.id.vpProjectFragment );
         navProject = findViewById(R.id.navProject);
@@ -201,13 +189,14 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
         navProject.setOnNavigationItemSelectedListener ( this );
 
         adapter = new ProjectActivityPagerAdapter ( getSupportFragmentManager () );
-        adapter.setFragment ( ProjectActivityPagerAdapter.PAGE_SCRIPT, new ScriptFragment (format) );
+        adapter.setFragment ( ProjectActivityPagerAdapter.PAGE_SCRIPT, new ScriptFragment (settings) );
         adapter.setFragment ( ProjectActivityPagerAdapter.PAGE_RENDER, new RenderFragment () );
         adapter.setFragment ( ProjectActivityPagerAdapter.PAGE_ERROR, new ErrorFragment () );
         vpProjectFragment.setAdapter ( adapter );
 
+        //format = new RenderColorFormat ( format.COLOR_MODEL_G, 8, false, true );
         //if (code != null)
-        //    ((ScriptFragment) adapter.getItem ( ProjectStatePagerAdapter.PAGE_SCRIPT )).setCode(code);
+        //  ((ScriptFragment) adapter.getItem ( ProjectActivityPagerAdapter.PAGE_SCRIPT )).setSettings(settings);
     }
 
     public void hideKeyboard() {
@@ -233,21 +222,19 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
         vpProjectFragment.setCurrentItem ( i );
     }
 
+
     @Override
     public boolean onNavigationItemSelected ( @NonNull MenuItem menuItem ) {
 
-        switch (menuItem.getItemId ( )) {
-            case R.id.navigation_project_script:
-                changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_SCRIPT );
-                break;
-            case R.id.navigation_project_render:
-                changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_RENDER );
-                break;
-            case R.id.navigation_project_error:
-                changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_ERROR );
-                break;
-            default:
-                return false;
+        int itemId = menuItem.getItemId ( );
+        if (itemId == R.id.navigation_project_script) {
+            changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_SCRIPT );
+        } else if (itemId == R.id.navigation_project_render) {
+            changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_RENDER );
+        } else if (itemId == R.id.navigation_project_error) {
+            changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_ERROR );
+        } else {
+            return false;
         }
 
         return true;
