@@ -3,8 +3,10 @@ package com.igalblech.school.graphicaljavascriptcompiler.ui;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,12 +20,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.igalblech.school.graphicaljavascriptcompiler.ActivityGallery;
 import com.igalblech.school.graphicaljavascriptcompiler.ActivityProject;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettingsPopup;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.project.V8ScriptExecutionThread;
 import com.igalblech.school.graphicaljavascriptcompiler.views.CodeEditText;
 import com.igalblech.school.graphicaljavascriptcompiler.views.CodeLineText;
+
+import java.io.Serializable;
 
 public class ScriptFragment extends Fragment {
 
@@ -56,7 +62,9 @@ public class ScriptFragment extends Fragment {
 
     public ScriptFragment( ProjectSettings settings) {
         this.settings = settings;
-        if (this.settings.code.equals ( "" ))
+        if (settings.userData == null)
+            Log.d("Developer", "ScriptFragment 1 settings.userData is null");
+        if (settings.code.equals ( "" ))
             this.settings.code = JS_CONST_DEFAULT;
     }
 
@@ -80,15 +88,11 @@ public class ScriptFragment extends Fragment {
         cetScript.setLines(15);
         btnExecute.setOnClickListener ( v -> {
                     Editable code = cetScript.getText ( );
-                    try {
+                    if (code != null)
                         settings.code = code.toString ( );
-                    } catch (NullPointerException e) {
-                        e.printStackTrace ( );
-                        Log.d ( "developer", e.toString ( ) );
-                    }
                     Activity activity = getActivity ( );
                     if (activity != null) {
-                        new ActivityProject.V8ScriptExecutionThread ( (ActivityProject) getActivity ( ), pnRenderingProgress ).execute ( settings );
+                        new V8ScriptExecutionThread ( (ActivityProject) getActivity ( ), pnRenderingProgress ).execute ( settings );
                     }
                 }
         );
@@ -159,28 +163,30 @@ public class ScriptFragment extends Fragment {
 
         btnScriptShareOnGallery.setOnClickListener ( v -> {
             if (settings.title.equals ( "" )) {
-                Toast.makeText ( getContext (), R.string.project_title_request, Toast.LENGTH_SHORT ).show ( );
-                Context context = getContext ();
+                Toast.makeText ( getContext ( ), R.string.project_title_request, Toast.LENGTH_SHORT ).show ( );
+                Context context = getContext ( );
                 if (context != null) {
                     ProjectSettingsPopup settingsPopup = new ProjectSettingsPopup ( context, settings );
                     settingsPopup.show ( );
                 }
+            } else {
+                if (settings.userData == null)
+                    Log.d("Developer", "ScriptFragment settings.userData is null");
+
+                Intent intent = new Intent ( getActivity (), ActivityGallery.class );
+                intent.putExtra ( "settings", settings );
+                intent.putExtra ( "add_project", true );
+                startActivity ( intent );
             }
         } );
 
         btnScriptBack.setOnClickListener ( v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext ());
-            Activity activity = getActivity ();
-            if (activity != null) {
-                builder.setMessage ( "Unsaved project will be lost" )
-                        .setCancelable ( false )
-                        .setPositiveButton ( "OK", ( dialog, id ) -> activity.finish ( ) )
-                        .setNegativeButton ( "Cancel", ( dialog, which ) -> {
-
-                        } );
-                AlertDialog alert = builder.create ( );
-                alert.show ( );//Toast.makeText ( getContext (), "You must log in to your account in order to make a new project!", Toast.LENGTH_LONG ).show ( );
-            }
+            AlertDialog alertDialog = new AlertDialog.Builder( getContext ()).create();
+            alertDialog.setTitle("Are you sure?");
+            alertDialog.setMessage("Unsaved data will be lost");
+            alertDialog.setButton("OK", ( dialog, which ) -> getActivity ().finish () );
+            alertDialog.setButton ( DialogInterface.BUTTON_NEGATIVE, "Cancel", ( dialog, which ) -> alertDialog.dismiss () );
+            alertDialog.show();
         } );
 
         return view;

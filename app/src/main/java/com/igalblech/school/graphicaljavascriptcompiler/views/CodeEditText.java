@@ -109,6 +109,7 @@ public class CodeEditText extends AppCompatEditText {
     public boolean onTouchEvent ( MotionEvent event ) {
         boolean ret = super.onTouchEvent ( event );
         updateSelectedLine();
+        performClick();
         return ret;
     }
 

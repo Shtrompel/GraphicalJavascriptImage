@@ -19,7 +19,7 @@
             android:layout_width="210dp"
             android:layout_height="144dp"
             android:layout_margin="@dimen/default_margin"
-            app:srcCompat="@drawable/hamoud_habibi" />
+            app:srcCompat="@mipmap/hamoud_habibi_round" />
 
         <FrameLayout
             android:layout_width="wrap_content"

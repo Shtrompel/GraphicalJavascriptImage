@@ -106,15 +106,6 @@
             style="?android:attr/buttonBarButtonStyle"
             />
 
-        <Button
-            android:text="@string/okay"
-            android:id="@+id/tvPopupProjectOk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            style="?android:attr/buttonBarButtonStyle"
-            />
-
     </LinearLayout>
 
 </LinearLayout>

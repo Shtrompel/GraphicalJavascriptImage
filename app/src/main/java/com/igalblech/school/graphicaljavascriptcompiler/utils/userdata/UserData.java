@@ -44,7 +44,6 @@ public class UserData implements Parcelable, Serializable {
     }
     */
 
-
     public UserData() {
 
     }

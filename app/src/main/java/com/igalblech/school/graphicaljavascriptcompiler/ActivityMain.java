@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -21,14 +22,19 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.eclipsesource.v8.BuildConfig;
 import com.google.android.material.navigation.NavigationView;
 
-import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.about.AboutFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.home.HomeFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.login.LoginFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.register.RegisterFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial.TutorialFragment;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.FakeDataGenerator;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.GalleryProjectSettingsPopup;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettingsPopup;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -36,23 +42,27 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
-        ActivityBase {
+import java.util.List;
+
+import lombok.var;
+
+import static com.igalblech.school.graphicaljavascriptcompiler.utils.FakeDataGenerator.randomUserData;
+
+public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     private TextView tvNavUsername;
     private TextView tvNavEmail;
 
-    private UserData userData = null;
-
-    // --Commented out by Inspection (28/10/2020 14:07):public static ActivityMain activityMain;
+    private UserData userData = randomUserData();
 
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {
-
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
+
+        ProjectSettingsDatabase database = new ProjectSettingsDatabase ( this, null );
 
         Toolbar toolbar = findViewById ( R.id.toolbar );
         setSupportActionBar ( toolbar );
@@ -158,13 +168,15 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         this.userData = userData;
     }
 
-    public boolean hasUser(){
+    public boolean hasUser() {
         return userData != null;
     }
 
     public void showLogoutConfirmation() {
-        if (userData == null)
+        if (userData == null) {
+            Toast.makeText ( this, "Your already logged out!", Toast.LENGTH_SHORT ).show ( );
             return;
+        }
         AlertDialog.Builder dialog=new AlertDialog.Builder(this);
         dialog.setMessage("Are you sure that you want to log out from your account?");
         dialog.setTitle("Log Out");

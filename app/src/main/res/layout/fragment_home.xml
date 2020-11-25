@@ -18,8 +18,8 @@
             android:layout_width="227dp"
             android:layout_height="221dp"
             android:layout_margin="@dimen/default_margin"
-            android:src="@drawable/hamoud_habibi"
-            android:contentDescription="TODO" />
+            android:src="@mipmap/hamoud_habibi_foreground"
+            android:contentDescription="@string/logo_image" />
 
         <LinearLayout
             android:layout_height="300dp"

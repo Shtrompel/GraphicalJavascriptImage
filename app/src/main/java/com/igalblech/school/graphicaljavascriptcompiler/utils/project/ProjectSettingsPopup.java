@@ -2,6 +2,7 @@ package com.igalblech.school.graphicaljavascriptcompiler.utils.project;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -22,6 +23,11 @@ public class ProjectSettingsPopup extends Dialog {
 
         etProjectSettingsTitle = findViewById ( R.id.etProjectSettingsTitle );
         etProjectSettingsDescription = findViewById ( R.id.etProjectSettingsDescription );
+
+        etProjectSettingsTitle.setText ( settings.title );
+        etProjectSettingsDescription.setText ( settings.description );
+        etProjectSettingsDescription.setMovementMethod(new ScrollingMovementMethod ());
+
         Button btnProjectSettingsCancel = findViewById ( R.id.btnProjectSettingsCancel );
         Button btnProjectSettingsSave = findViewById ( R.id.btnProjectSettingsSave );
 
@@ -32,6 +38,7 @@ public class ProjectSettingsPopup extends Dialog {
             String description = etProjectSettingsDescription.getText ().toString ();
             settings.title = title;
             settings.description = description;
+            dismiss ();
         } );
     }
 }

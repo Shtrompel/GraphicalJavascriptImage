@@ -15,9 +15,8 @@ import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
-import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 
-public class TutorialFragment extends Fragment implements ActivityBase, BottomNavigationView.OnNavigationItemSelectedListener {
+public class TutorialFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private PDFView pdfView;
     private BottomNavigationView bottomNavigationView;

@@ -18,11 +18,10 @@ public class ProjectSettings implements Serializable {
     public Date dateCreated = null;
     public Date lastUpdated = null;
 
-
     @NonNull
     @Override
-    protected Object clone ( ) {
-        ProjectSettings ret = new ProjectSettings();
+    protected Object clone ( ) throws CloneNotSupportedException {
+        ProjectSettings ret = (ProjectSettings) super.clone();
         ret.width = width;
         ret.height = height;
         ret.format = (RenderColorFormat) this.format.clone ();
@@ -34,4 +33,6 @@ public class ProjectSettings implements Serializable {
         ret.userData = userData;
         return ret;
     }
+
+
 }

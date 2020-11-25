@@ -1,5 +1,6 @@
 package com.igalblech.school.graphicaljavascriptcompiler.ui.login;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,7 +22,6 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.igalblech.school.graphicaljavascriptcompiler.ActivityMain;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
-import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.contact.CodeGenerator;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataValidator;
@@ -30,7 +30,7 @@ import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataD
 import lombok.Getter;
 import lombok.Setter;
 
-public class LoginFragment extends Fragment implements ActivityBase {
+public class LoginFragment extends Fragment {
 
     private View root;
 
@@ -78,8 +78,8 @@ public class LoginFragment extends Fragment implements ActivityBase {
 
     public void addBehaviourToViews() {
         btnLoginApply.setOnClickListener( view -> {
-
-            if (((ActivityMain)getActivity ()).hasUser ()) {
+            Activity activity = getActivity ();
+            if (activity != null && ((ActivityMain)activity).hasUser ()) {
                 Toast.makeText ( getContext (), "You are already logged in! Log out from your current account to login as another one.", Toast.LENGTH_SHORT ).show ( );
                 return;
             }
@@ -138,15 +138,18 @@ public class LoginFragment extends Fragment implements ActivityBase {
 
             UserData userData = userDataManager.findUserViaEmailOrPhone ( email, phone );
             if (userData == null) {
-                if (!isSms && !isEmail)
-                    Toast.makeText ( getContext (), "Please fill in your email/sms", Toast.LENGTH_SHORT ).show ( );
-                else if (!isSms && isEmail)
-                    Toast.makeText ( getContext (), "No user with the inputted email!", Toast.LENGTH_SHORT ).show ( );
-                else if (isSms && !isEmail)
-                    Toast.makeText ( getContext (), "No user with the inputted phone!", Toast.LENGTH_SHORT ).show ( );
-                else
-                    Toast.makeText ( getContext (), "No user with the inputted phone and email!", Toast.LENGTH_SHORT ).show ( );
-
+                if (isSms) {
+                    if (isEmail)
+                        Toast.makeText ( getContext (), "No user with the inputted phone and email!", Toast.LENGTH_SHORT ).show ( );
+                    else
+                        Toast.makeText ( getContext (), "No user with the inputted phone!", Toast.LENGTH_SHORT ).show ( );
+                }
+                else {
+                    if (isEmail)
+                        Toast.makeText ( getContext (), "No user with the inputted email!", Toast.LENGTH_SHORT ).show ( );
+                    else
+                        Toast.makeText ( getContext (), "Please fill in your email/sms", Toast.LENGTH_SHORT ).show ( );
+                }
                 return;
             }
 

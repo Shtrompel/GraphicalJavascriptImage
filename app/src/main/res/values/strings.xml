@@ -80,5 +80,14 @@
     <string name="rgb">RGB</string>
     <string name="hsv">HSV</string>
     <string name="color_model_text">\"Color Model : %s\"</string>
+    <string name="logo_image">Logo Image</string>
+    <string name="project_publish_button">Publish</string>
+    <string name="publish">Publish</string>
+    <string name="close">Close</string>
+    <string name="edit">Edit</string>
+    <string name="btn_gallery_my_projects">My Projects</string>
+    <string name="btn_gallery_new_projects">New Projects</string>
+    <string name="height">Height</string>
+    <string name="width">Width</string>
 
 </resources>

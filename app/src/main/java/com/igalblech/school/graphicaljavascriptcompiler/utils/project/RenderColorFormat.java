@@ -9,6 +9,7 @@ public class RenderColorFormat implements Serializable, Cloneable {
     public static final int COLOR_MODEL_G = 0;
     public static final int COLOR_MODEL_RGB = 1;
     public static final int COLOR_MODEL_HSV = 2;
+    public static final int COLOR_MODEL_CMYK = 3; //TODO
 
     public final int colorModel;
     public final int channelBit;
@@ -110,88 +111,6 @@ public class RenderColorFormat implements Serializable, Cloneable {
         }
     }
 
-    /*
-    public byte[] createColor(double v1, double v2, double v3) {
-        double a;
-        if (hasAlpha)
-            a = 0;
-        else {
-            if (isFloat) a = 1;
-            else a = 255;
-        }
-        return createColor(v1, v2, v3, a);
-    }
-
-    public byte[] createColor(double v1, double v2, double v3, double a) {
-        double g;
-
-        switch (colorModel) {
-            case COLOR_MODEL_G:
-                if (v1 != v2 || v1 != v3) {
-                    g = (v1 + v2 + v3) / 3;
-                    v1 = g;
-                    v2 = g;
-                    v3 = g;
-                }
-                break;
-            case COLOR_MODEL_RGB:
-                break;
-            case COLOR_MODEL_HSV:
-                double[] arr = HSVtoRGB(v1, v2, v3);
-                v1 = (int)arr[0];
-                v2 = (int)arr[1];
-                v3 = (int)arr[2];
-                break;
-        }
-
-
-        byte[] ret = new byte[4];
-        ret[0] = (byte)quantizeValue ( v1 );
-        ret[1] = (byte)quantizeValue ( v2 );
-        ret[2] = (byte)quantizeValue ( v3 );
-        ret[3] = (byte)quantizeValue ( a );
-        return ret;
-    }
-
-    public int[] createColor(double v1, double v2, double v3) {
-        return createColor(v1, v2, v3, hasAlpha ? 0 : 255);
-    }
-
-    public int[] createColor(double v1, double v2, double v3, double a) {
-
-        double g;
-        switch (colorModel) {
-            case COLOR_MODEL_G:
-                if (v1 != v2 || v1 != v3) {
-                    g = (v1 + v2 + v3) / 3;
-                    v1 = g;
-                    v2 = g;
-                    v3 = g;
-                }
-                break;
-            case COLOR_MODEL_RGB:
-                break;
-            case COLOR_MODEL_HSV:
-                double[] arr = HSVtoRGB(v1, v2, v3);
-                v1 = arr[0];
-                v2 = arr[1];
-                v3 = arr[2];
-                break;
-        }
-
-        int[] ret = new int[4];
-        ret[0] = quantizeValue ( v1 );
-        ret[1] = quantizeValue ( v2 );
-        ret[2] = quantizeValue ( v3 );
-        ret[3] = quantizeValue ( a );
-        return ret;
-    }
-
-
-    public byte[] createColor ( double v ) {
-        return createColor(new double[]{v});
-    }
-    */
     public byte[] createColor ( double[] doubles ) {
         byte r = 0, g = 0, b = 0, a;
         int i = 0;
@@ -226,13 +145,17 @@ public class RenderColorFormat implements Serializable, Cloneable {
                 break;
         }
 
-        if (hasAlpha) {
+        if (hasAlpha && doubles.length > i + 1) {
             a = quantizeValue ( doubles[i + 1] );
         }
         else
             a = (byte)255;
 
         return new byte[]{r, g, b, a};
+    }
+
+    public String colorModelToString() {
+        return new String[]{"Gray", "RGB", "HSV"}[colorModel];
     }
 
     @Override
@@ -248,7 +171,7 @@ public class RenderColorFormat implements Serializable, Cloneable {
 
     @NonNull
     @Override
-    protected Object clone ( ) {
+    protected Object clone ( ) throws CloneNotSupportedException {
         return new RenderColorFormat (
                 this.colorModel,
                 this.channelBit,

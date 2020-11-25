@@ -15,12 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.igalblech.school.graphicaljavascriptcompiler.R;
-import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataValidator;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataDatabase;
 
-public class RegisterFragment extends Fragment implements ActivityBase {
+public class RegisterFragment extends Fragment {
 
     private View root;
 

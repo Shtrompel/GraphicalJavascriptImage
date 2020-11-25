@@ -10,9 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.igalblech.school.graphicaljavascriptcompiler.R;
-import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 
-public class AboutFragment extends Fragment implements ActivityBase {
+public class AboutFragment extends Fragment {
 
     public View onCreateView ( @NonNull LayoutInflater inflater,
                                ViewGroup container, Bundle savedInstanceState ) {

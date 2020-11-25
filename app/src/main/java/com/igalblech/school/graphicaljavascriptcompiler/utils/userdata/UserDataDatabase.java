@@ -33,7 +33,6 @@ public class UserDataDatabase extends SQLiteOpenHelper {
     }
 
     public static class RetClass {
-        // --Commented out by Inspection (28/10/2020 14:07):public UserData userData;
         public @Setter int value;
     }
 
@@ -125,14 +124,6 @@ public class UserDataDatabase extends SQLiteOpenHelper {
 
     public void addUserdata( UserData userData ) {
         ContentValues values = userDataToContentValues(userData);
-        /*
-        values.put(Constants.COLUMN_USERNAME, userData.getUsername ());
-        values.put(Constants.COLUMN_PASSWORD, userData.getPassword ());
-        values.put(Constants.COLUMN_EMAIL, userData.getEmail ());
-        values.put(Constants.COLUMN_PHONE, userData.getPhone ());
-        values.put(Constants.COLUMN_IS_VERIFIED, userData.isVerified () ? 1 : 0);
-        values.put(Constants.COLUMN_VERIFICATION_CODE, userData.getVerificationCode ());
-        */
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.insert(Constants.TABLE_NAME, null, values);
@@ -161,19 +152,6 @@ public class UserDataDatabase extends SQLiteOpenHelper {
         return values;
     }
 
-/*
-    public int getRowCount() {
-        SQLiteDatabase database = getReadableDatabase ();
-        long size = DatabaseUtils.queryNumEntries(database, Constants.TABLE_NAME);
-        database.close ();
-        return (int)size;
-    }
-
-    public int getUserdataByIndex() {
-
-    }
-*/
-
     public RetClass iterateThroughRows ( UserdataIterable userdataIterable, UserData in) {
         return iterateThroughRows (userdataIterable, in ,null, null);
     }
@@ -188,16 +166,6 @@ public class UserDataDatabase extends SQLiteOpenHelper {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + Constants.TABLE_NAME, null);
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
             DatabaseUtils.dumpCurrentRowToString(cursor);
-/*
-            UserData userData = new UserData (  );
-            userData.setUsername ( cursor.getString ( cursor.getColumnIndex( Constants.COLUMN_USERNAME ) ) );
-            userData.setPassword ( cursor.getString ( cursor.getColumnIndex( Constants.COLUMN_PASSWORD ) ) );
-            userData.setEmail ( cursor.getString ( cursor.getColumnIndex( Constants.COLUMN_EMAIL ) ) );
-            userData.setPhone ( cursor.getString ( cursor.getColumnIndex( Constants.COLUMN_PHONE ) ) );
-            userData.setVerificationCode ( cursor.getString ( cursor.getColumnIndex( Constants.COLUMN_VERIFICATION_CODE ) ) );
-            userData.setVerified ( cursor.getInt ( cursor.getColumnIndex( Constants.COLUMN_IS_VERIFIED ) ) == 1 ? true : false );
-*/
-
             UserData userData = cursorToUserdata(cursor);
 
             RetClass x = userdataIterable.onIteration ( sqLiteDatabase, userData, in, str1, str2 );
@@ -327,29 +295,12 @@ public class UserDataDatabase extends SQLiteOpenHelper {
     }
 
     public void validateUser(UserData userData) {
-
-/*
-        // https://stackoverflow.com/questions/11563732/change-a-value-in-a-column-in-sqlite
-        String sqlScript = String.format ( "UPDATE %s SET %s = %d WHERE %s = '%s';",
-                Constants.TABLE_NAME,
-                Constants.COLUMN_KEY,
-                1,
-                Constants.COLUMN_USERNAME,
-                userData.getUsername ());
-
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase ();
-        sqLiteDatabase.execSQL ( sqlScript );
-        sqLiteDatabase.close ();
-        */
-
-
         userData.setVerified ( true );
 
         ContentValues cv = new ContentValues ( );
         cv.put ( Constants.COLUMN_IS_VERIFIED, 1 );
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase ();
-        //sqLiteDatabase.execSQL ( sqlScript );
 
         int v = sqLiteDatabase.update (
                 Constants.TABLE_NAME,
@@ -361,12 +312,4 @@ public class UserDataDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.close ();
 
     }
-
-
-
-    // addUser - in user data, validation password
-    // checkForClashes - in Userdata
-    // loginUser - in password,username out user data
-    // changePassword - in UserData, password
-    // findUserViaCode
 }

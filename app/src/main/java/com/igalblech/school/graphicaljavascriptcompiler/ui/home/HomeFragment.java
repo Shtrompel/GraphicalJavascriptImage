@@ -1,6 +1,8 @@
 package com.igalblech.school.graphicaljavascriptcompiler.ui.home;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -14,14 +16,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.igalblech.school.graphicaljavascriptcompiler.ActivityGallery;
 import com.igalblech.school.graphicaljavascriptcompiler.ActivityMain;
-import com.igalblech.school.graphicaljavascriptcompiler.ActivityProject;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
-import com.igalblech.school.graphicaljavascriptcompiler.interfaces.ActivityBase;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.CreateProjectPopup;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 
-public class HomeFragment extends Fragment implements ActivityBase {
+public class HomeFragment extends Fragment {
 
     private Button btnMainCreateNew;
     private Button btnOpenGallery;
@@ -49,24 +50,30 @@ public class HomeFragment extends Fragment implements ActivityBase {
     }
 
     public void addBehaviourToViews() {
-
         btnMainResume.setOnClickListener ( v -> Toast.makeText ( getContext (), "Todo", Toast.LENGTH_SHORT ).show ( ) );
 
         btnMainExit.setOnClickListener ( view -> {
-            getActivity ().finish();
+            Activity activity = getActivity ();
+            if (activity != null)
+                activity.finish ();
             getActivity().moveTaskToBack(true);
             System.exit(0);
         } );
 
         btnMainCreateNew.setOnClickListener ( v -> {
-
-            if (((ActivityMain)getActivity ()).getUserData ( ) == null) {
+            Activity activity = getActivity ();
+            if (activity == null)
+                return;
+            UserData userData = ((ActivityMain)activity).getUserData ( );
+            if (userData == null) {
                 showMissingUserPopup();
             }
             else {
-
-                CreateProjectPopup popup = new CreateProjectPopup(getContext ());
-                popup.show ();
+                Context context = getContext ();
+                if (context != null) {
+                    CreateProjectPopup popup = new CreateProjectPopup ( getContext ( ), userData );
+                    popup.show ( );
+                }
 /*
                 int renderWidth = 256;
                 int renderHeight = 256;
@@ -93,14 +100,16 @@ public class HomeFragment extends Fragment implements ActivityBase {
         } );
 
         btnOpenGallery.setOnClickListener ( v -> {
-
-            if (((ActivityMain)getActivity ()).getUserData ( ) == null) {
+            Activity activity = getActivity ();
+            if (activity == null)
+                return;
+            if (((ActivityMain)activity).getUserData ( ) == null) {
                 showMissingUserPopup();
             }
             else {
-                Intent intent = new Intent ( getActivity ( ), ActivityProject.class );
+                Intent intent = new Intent ( getActivity ( ), ActivityGallery.class );
                 UserData userData = ((ActivityMain)getActivity ()).getUserData ( );
-                intent.putExtra ( "userdata", (Parcelable) userData );
+                intent.putExtra ( "user_data", (Parcelable) userData );
                 startActivity ( intent );
             }
         } );

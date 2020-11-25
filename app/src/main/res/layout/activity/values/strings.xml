@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_gallery_top_projects">Top Projects</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="info">Info</string>
+</resources>

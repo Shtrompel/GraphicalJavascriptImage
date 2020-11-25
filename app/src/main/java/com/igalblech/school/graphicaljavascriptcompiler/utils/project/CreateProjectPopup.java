@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 
 import com.igalblech.school.graphicaljavascriptcompiler.ActivityProject;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
+import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 
 import java.util.Calendar;
 
@@ -23,7 +24,7 @@ public class CreateProjectPopup extends Dialog {
 
     private ProjectSettings settings;
 
-    public int selectedItem = 0;
+    public int selectedItem = -1;
     private final EditText etBits;
     private final EditText etRenderWidth;
     private final EditText etRenderHeight;
@@ -31,7 +32,7 @@ public class CreateProjectPopup extends Dialog {
     private final CheckBox cbHasAlpha;
     private final CheckBox cbIsFloat;
 
-    public CreateProjectPopup ( @NonNull Context context ) {
+    public CreateProjectPopup ( @NonNull Context context, UserData userData ) {
         super ( context );
 
         setContentView ( R.layout.popup_create_project );
@@ -63,32 +64,55 @@ public class CreateProjectPopup extends Dialog {
         Button tvCreate = findViewById ( R.id.tvPopupProjectCreate );
 
         tvCreate.setOnClickListener ( v -> {
+            int renderWidth, renderHeight, channelBits, colorModel;
             try {
-                int renderWidth = Integer.parseInt ( etRenderWidth.getText ( ).toString ( ) );
-                int renderHeight = Integer.parseInt ( etRenderHeight.getText ( ).toString ( ) );
-                int channelBits = Integer.parseInt ( etBits.getText ( ).toString ( ) );
-                int colorModel = selectedItem;
-                boolean isFloat = cbIsFloat.isChecked ( );
-                boolean hasAlpha = cbHasAlpha.isChecked ( );
-
-                ProjectSettings settings1;
-                settings1 = new ProjectSettings ( );
-                settings1.format = new RenderColorFormat ( colorModel, channelBits, isFloat, hasAlpha );
-                settings1.width = renderWidth;
-                settings1.height = renderHeight;
-                settings1.dateCreated = Calendar.getInstance ( ).getTime ( );
-                settings1.lastUpdated = Calendar.getInstance ( ).getTime ( );
-                settings1.code = "";
-                settings1.description = "";
-
-                dismiss ( );
-
-                Intent intent = new Intent ( context, ActivityProject.class );
-                intent.putExtra ( "settings", settings1 );
-                context.startActivity ( intent );
+                renderWidth = Integer.parseInt ( etRenderWidth.getText ( ).toString ( ) );
             } catch (IllegalArgumentException e) {
-                Toast.makeText ( context, "Illegal argument in the Color Bits", Toast.LENGTH_SHORT ).show ( );
+                Toast.makeText ( context, "Illegal argument in the Render Width!", Toast.LENGTH_SHORT ).show ( );
+                return;
             }
+
+            try {
+                renderHeight = Integer.parseInt ( etRenderHeight.getText ( ).toString ( ) );
+            } catch (IllegalArgumentException e) {
+                Toast.makeText ( context, "Illegal argument in the Render Height!", Toast.LENGTH_SHORT ).show ( );
+                return;
+            }
+
+            try {
+                channelBits = Integer.parseInt ( etBits.getText ( ).toString ( ) );
+            } catch (IllegalArgumentException e) {
+                Toast.makeText ( context, "Illegal argument in the Color Bits!", Toast.LENGTH_SHORT ).show ( );
+                return;
+            }
+
+            if (selectedItem != -1) {
+                colorModel = selectedItem;
+            }
+            else {
+                Toast.makeText ( context, "No color model was selected!", Toast.LENGTH_SHORT ).show ( );
+                return;
+            }
+
+            boolean isFloat = cbIsFloat.isChecked ( );
+            boolean hasAlpha = cbHasAlpha.isChecked ( );
+
+            ProjectSettings settings1;
+            settings1 = new ProjectSettings ( );
+            settings1.format = new RenderColorFormat ( colorModel, channelBits, isFloat, hasAlpha );
+            settings1.width = renderWidth;
+            settings1.height = renderHeight;
+            settings1.dateCreated = Calendar.getInstance ( ).getTime ( );
+            settings1.lastUpdated = Calendar.getInstance ( ).getTime ( );
+            settings1.code = "";
+            settings1.description = "";
+            settings1.userData = userData;
+
+            dismiss ( );
+
+            Intent intent = new Intent ( context, ActivityProject.class );
+            intent.putExtra ( "settings", settings1 );
+            context.startActivity ( intent );
         } );
 
 
