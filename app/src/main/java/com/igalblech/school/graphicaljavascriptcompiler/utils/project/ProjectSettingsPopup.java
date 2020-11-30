@@ -24,8 +24,8 @@ public class ProjectSettingsPopup extends Dialog {
         etProjectSettingsTitle = findViewById ( R.id.etProjectSettingsTitle );
         etProjectSettingsDescription = findViewById ( R.id.etProjectSettingsDescription );
 
-        etProjectSettingsTitle.setText ( settings.title );
-        etProjectSettingsDescription.setText ( settings.description );
+        etProjectSettingsTitle.setText ( settings.getTitle () );
+        etProjectSettingsDescription.setText ( settings.getDescription () );
         etProjectSettingsDescription.setMovementMethod(new ScrollingMovementMethod ());
 
         Button btnProjectSettingsCancel = findViewById ( R.id.btnProjectSettingsCancel );
@@ -36,8 +36,7 @@ public class ProjectSettingsPopup extends Dialog {
         btnProjectSettingsSave.setOnClickListener ( v -> {
             String title = etProjectSettingsTitle.getText ().toString ();
             String description = etProjectSettingsDescription.getText ().toString ();
-            settings.title = title;
-            settings.description = description;
+            settings.setProjectInfo ( title, description );
             dismiss ();
         } );
     }

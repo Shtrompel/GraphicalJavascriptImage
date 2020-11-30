@@ -2,6 +2,8 @@
 package com.igalblech.school.graphicaljavascriptcompiler;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -102,6 +104,20 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitProjectActivity();
+    }
+
+    public void exitProjectActivity() {
+        AlertDialog alertDialog = new AlertDialog.Builder( this ).create();
+        alertDialog.setTitle("Are you sure?");
+        alertDialog.setMessage("Unsaved data will be lost");
+        alertDialog.setButton("OK", ( dialog, which ) -> finish () );
+        alertDialog.setButton ( DialogInterface.BUTTON_NEGATIVE, "Cancel", ( dialog, which ) -> alertDialog.dismiss () );
+        alertDialog.show();
     }
 
 }

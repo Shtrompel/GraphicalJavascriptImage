@@ -1,8 +1,12 @@
 package com.igalblech.school.graphicaljavascriptcompiler.utils.project;
 
+import android.graphics.ColorSpace;
+
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
+
+import lombok.Getter;
 
 public class RenderColorFormat implements Serializable, Cloneable {
 
@@ -11,11 +15,11 @@ public class RenderColorFormat implements Serializable, Cloneable {
     public static final int COLOR_MODEL_HSV = 2;
     public static final int COLOR_MODEL_CMYK = 3; //TODO
 
-    public final int colorModel;
-    public final int channelBit;
-    public final boolean isFloat;
-    public final boolean hasAlpha;
-    public int channelCount;
+    private @Getter int colorModel;
+    private @Getter int channelBit;
+    private @Getter boolean isFloat;
+    private @Getter boolean hasAlpha;
+    private @Getter int channelCount;
 
     public static double[] HSVtoRGB(double h, double s, double v)
     {
@@ -88,9 +92,13 @@ public class RenderColorFormat implements Serializable, Cloneable {
         this.channelBit = channelBit;
         this.isFloat = isFloat;
         this.hasAlpha = hasAlpha;
-        channelCount = new int[]{1, 3, 3}[colorModel];
+        channelCount = new int[]{1, 3, 3, 4}[colorModel];
         if (hasAlpha)
             channelCount++;
+    }
+
+    public static float invertByteToFloat(float b) {
+        return (255 - (int)b) / 256.0f;
     }
 
     public byte quantizeValue(double x) {
@@ -127,6 +135,16 @@ public class RenderColorFormat implements Serializable, Cloneable {
                 g = quantizeValue ( doubles[1] );
                 b = quantizeValue ( doubles[2] );
                 break;
+            case COLOR_MODEL_CMYK:
+                i = 3;
+                float   c = invertByteToFloat(quantizeValue(doubles[0])),
+                        m = invertByteToFloat(quantizeValue(doubles[1])),
+                        y = invertByteToFloat(quantizeValue(doubles[2])),
+                        k = invertByteToFloat(quantizeValue(doubles[3]));
+                r = (byte)(c * k * 256.0f);
+                g = (byte)(m * k * 256.0f);
+                b = (byte)(y * k * 256.0f);
+                break;
             case COLOR_MODEL_HSV:
                 i = 2;
                 double h = doubles[0];
@@ -155,7 +173,7 @@ public class RenderColorFormat implements Serializable, Cloneable {
     }
 
     public String colorModelToString() {
-        return new String[]{"Gray", "RGB", "HSV"}[colorModel];
+        return new String[]{"Gray", "RGB", "HSV", "CMYK"}[colorModel];
     }
 
     @Override
@@ -172,11 +190,11 @@ public class RenderColorFormat implements Serializable, Cloneable {
     @NonNull
     @Override
     protected Object clone ( ) throws CloneNotSupportedException {
-        return new RenderColorFormat (
-                this.colorModel,
-                this.channelBit,
-                this.isFloat,
-                this.hasAlpha
-        );
+        RenderColorFormat renderColorFormat = (RenderColorFormat)super.clone ();
+        renderColorFormat.colorModel = this.colorModel;
+        renderColorFormat.channelBit = this.channelBit;
+        renderColorFormat.channelBit = this.channelBit;
+        renderColorFormat.hasAlpha = this.hasAlpha;
+        return renderColorFormat;
     }
 }

@@ -38,19 +38,19 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
         public static final String COLUMN_DATA = "data";
         public static final String COLUMN_CREATED_DATE = "created_date";
         public static final String COLUMN_ID = "private_id";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_TITLE = "title";
+
+        public static final String COLUMN_PUBLIC_VIEWS = "views";
+        public static final String COLUMN_PUBLIC_RATING = "rating";
     }
 
-    private static String formatColumn(String name, String type, boolean addComma) {
+    private static String formatColumn(String name, String type) {
         return String.format (
-                "%s %s %s ",
+                "%s %s",
                 name,
-                type,
-                addComma ? "," : ""
+                type
         );
-    }
-
-    private static String formatColumn(String name, String type){
-        return formatColumn(name, type, true);
     }
 
     public ProjectSettingsDatabase ( @Nullable Context context, @Nullable SQLiteDatabase.CursorFactory factory ) {
@@ -59,19 +59,29 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate ( SQLiteDatabase db ) {
-        String stringBuilderPrivate = String.format ( "CREATE TABLE %s (",
-                Constants.PRIVATE_TABLE_NAME ) +
-                formatColumn ( Constants.COLUMN_ID, "INTEGER" ) +
-                formatColumn ( Constants.COLUMN_DATA, "BLOB" ) +
-                formatColumn ( Constants.COLUMN_CREATED_DATE, "TEXT", false ) +
-                ");";
+
+        String stringBuilderPrivate = String.format ( Locale.ENGLISH,
+                "CREATE TABLE %s (%s, %s, %s, %s, %s)",
+                Constants.PRIVATE_TABLE_NAME,
+                formatColumn ( Constants.COLUMN_ID, "INTEGER" ),
+                formatColumn ( Constants.COLUMN_DATA, "BLOB" ),
+                formatColumn ( Constants.COLUMN_CREATED_DATE, "TEXT"),
+                formatColumn ( Constants.COLUMN_USERNAME, "TEXT"),
+                formatColumn ( Constants.COLUMN_TITLE, "TEXT")
+                );
         db.execSQL( stringBuilderPrivate );
 
-        String stringBuilderPublic = String.format ( "CREATE TABLE %s (", Constants.PUBLIC_TABLE_NAME ) +
-                formatColumn ( Constants.COLUMN_ID, "INTEGER" ) +
-                formatColumn ( Constants.COLUMN_DATA, "BLOB" ) +
-                formatColumn ( Constants.COLUMN_CREATED_DATE, "TEXT", false ) +
-                ");";
+        String stringBuilderPublic = String.format ( Locale.ENGLISH,
+                "CREATE TABLE %s (%s, %s, %s, %s, %s, %s, %s)",
+                Constants.PUBLIC_TABLE_NAME,
+                formatColumn ( Constants.COLUMN_ID, "INTEGER" ),
+                formatColumn ( Constants.COLUMN_DATA, "BLOB" ),
+                formatColumn ( Constants.COLUMN_CREATED_DATE, "TEXT"),
+                formatColumn ( Constants.COLUMN_USERNAME, "TEXT"),
+                formatColumn ( Constants.COLUMN_TITLE, "TEXT"),
+                formatColumn ( Constants.COLUMN_PUBLIC_VIEWS, "INTEGER"),
+                formatColumn ( Constants.COLUMN_PUBLIC_RATING, "FLOAT")
+        );
         db.execSQL( stringBuilderPublic );
     }
 
@@ -85,7 +95,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase ();
         String dbQuery = String.format ( Locale.ENGLISH,
-                "SELECT * FROM %s ORDER BY %s ASC LIMIT %d",
+                "SELECT * FROM %s ORDER BY %s DESC LIMIT %d",
                 tableName,
                 sort,
                 end
@@ -99,7 +109,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
 
                 ProjectSettings settings;
 
-                int id = c.getInt ( c.getColumnIndex ( Constants.COLUMN_ID ) );
+                //int id = c.getInt ( c.getColumnIndex ( Constants.COLUMN_ID ) );
                 byte[] data = c.getBlob ( c.getColumnIndex ( Constants.COLUMN_DATA ) );
                 ByteArrayInputStream inputStream = new ByteArrayInputStream ( data );
                 ObjectInput input;
@@ -126,6 +136,19 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
         return toList(start, end, tableName, Constants.COLUMN_CREATED_DATE);
     }
 
+    public boolean hasOccurrence(ProjectSettings projectSettings, String tableName) {
+        SQLiteDatabase database = getReadableDatabase ();
+        String sql = String.format ( "SELECT * FROM %s WHERE %s=\"%s\" AND %s=\"%s\" LIMIT 1",
+                tableName,
+                Constants.COLUMN_USERNAME,
+                projectSettings.getUserData ().getUsername (),
+                Constants.COLUMN_TITLE,
+                projectSettings.getTitle ()
+        );
+        Cursor cursor = database.rawQuery ( sql, null );
+        return cursor.getCount () == 1;
+    }
+
     public boolean addProject(ProjectSettings projectSettings, long id, String tableName) {
         boolean ret = false;
         SQLiteDatabase db = getWritableDatabase();
@@ -141,22 +164,45 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
         }
         catch (IOException e) {
             Log.d ( "Developer", e.toString () );
-            return ret;
+            return false;
         }
 
         try{
-            String sql = String.format ( "INSERT INTO %s (%s, %s, %s) VALUES(?, ?, ?)",
-                    tableName,
-                    Constants.COLUMN_ID,
-                    Constants.COLUMN_DATA,
-                    Constants.COLUMN_CREATED_DATE
-            );
+            String sql = "";
+            if (tableName == Constants.PRIVATE_TABLE_NAME) {
+                sql = String.format ( "INSERT INTO %s (%s, %s, %s, %s, %s) VALUES(?, ?, ?, ?, ?)",
+                        tableName,
+                        Constants.COLUMN_ID,
+                        Constants.COLUMN_DATA,
+                        Constants.COLUMN_CREATED_DATE,
+                        Constants.COLUMN_USERNAME,
+                        Constants.COLUMN_TITLE
+                );
+            }
+            else if (tableName == Constants.PUBLIC_TABLE_NAME) {
+                sql = String.format ( "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s) VALUES(?, ?, ?, ?, ?, ?, ?)",
+                        tableName,
+                        Constants.COLUMN_ID,
+                        Constants.COLUMN_DATA,
+                        Constants.COLUMN_CREATED_DATE,
+                        Constants.COLUMN_USERNAME,
+                        Constants.COLUMN_TITLE,
+                        Constants.COLUMN_PUBLIC_VIEWS,
+                        Constants.COLUMN_PUBLIC_RATING
+                );
+            }
 
             SQLiteStatement insertStmt =  db.compileStatement(sql);
             insertStmt.clearBindings();
             insertStmt.bindLong(1, id);
             insertStmt.bindBlob(2, bos.toByteArray());
-            insertStmt.bindLong (3, projectSettings.lastUpdated.getTime ());
+            insertStmt.bindLong (3, projectSettings.getLastUpdated ().getTime ());
+            insertStmt.bindString (4, projectSettings.getUserData ().getUsername ());
+            insertStmt.bindString (5, projectSettings.getTitle ());
+            if (tableName == Constants.PUBLIC_TABLE_NAME) {
+                insertStmt.bindLong (6, projectSettings.getViews ());
+                insertStmt.bindDouble (7, projectSettings.getRatings ());
+            }
             insertStmt.executeInsert();
 
             db.setTransactionSuccessful();

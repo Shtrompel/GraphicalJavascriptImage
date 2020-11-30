@@ -44,13 +44,13 @@ public class V8ScriptExecutionThread extends AsyncTask<ProjectSettings, Integer,
 
         Output output = new Output();
         output.isError = false;
-        output.width = args[0].width;
-        output.height = args[0].height;
+        output.width = args[0].getWidth ();
+        output.height = args[0].getHeight ();
 
-        byte[] bytesArray = new byte[args[0].width * args[0].height * 4];
+        byte[] bytesArray = new byte[output.width * output.height * 4];
 
         V8 runtime = V8.createV8Runtime ( );
-        String script = args[0].code + ScriptFragment.JS_CONST_EXECUTE_ARR;
+        String script = args[0].getCode () + ScriptFragment.JS_CONST_EXECUTE_ARR;
 
         try {
             runtime.executeVoidScript ( script );
@@ -62,9 +62,9 @@ public class V8ScriptExecutionThread extends AsyncTask<ProjectSettings, Integer,
             output.isError = true;
         }
 
-        int width = args[0].width;
-        int height = args[0].height;
-        int count = args[0].format.channelCount;
+        int width = args[0].getWidth ();
+        int height = args[0].getHeight ();
+        int count = args[0].getFormat ().getChannelCount ();
         int pixelCount = width * height;
 
         runtime.add ( "width", width );
@@ -102,7 +102,7 @@ public class V8ScriptExecutionThread extends AsyncTask<ProjectSettings, Integer,
                         for (int j = 0; j < count; j++)
                             values[j] = doubles[doublesPixel++];
 
-                        byte[] bytes = args[0].format.createColor ( values );
+                        byte[] bytes = args[0].getFormat ().createColor ( values );
 
                         bytesArray[i * 4] = bytes[0];
                         bytesArray[i * 4 + 1] = bytes[1];

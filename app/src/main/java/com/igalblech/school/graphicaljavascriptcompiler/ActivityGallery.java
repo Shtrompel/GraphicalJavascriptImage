@@ -1,15 +1,13 @@
 package com.igalblech.school.graphicaljavascriptcompiler;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
-import android.os.Build;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,32 +17,41 @@ import com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.GalleryPro
 import com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectListAdapter;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettingsPopup;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.project.RenderColorFormat;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
-import static com.igalblech.school.graphicaljavascriptcompiler.utils.FakeDataGenerator.debugRandomSettings;
+import static com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase.Constants.COLUMN_CREATED_DATE;
+import static com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase.Constants.COLUMN_PUBLIC_RATING;
+import static com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase.Constants.COLUMN_PUBLIC_VIEWS;
+import static com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase.Constants.PRIVATE_TABLE_NAME;
+import static com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase.Constants.PUBLIC_TABLE_NAME;
+
+
 
 public class ActivityGallery extends AppCompatActivity implements AbsListView.OnScrollListener {
+
+    public static final int GALLERY_MODE_PRIVATE = 0;
+    public static final int GALLERY_MODE_PUBLIC_NEW = 1;
+    public static final int GALLERY_MODE_PUBLIC_TOP = 2;
+    private static final int GALLERY_MODE_PUBLIC_HOT = 3;
 
     private UserData userData = null;
     private ProjectSettings settings = null;
     private boolean addNewProject = false;
 
     private ListView lsGalleryProjects;
-    private Button btnGalleryMyProjects, btnGalleryNewProjects, btnGalleryTopProjects, btnGalleryExit;
+    private Button btnGalleryMyProjects, btnGalleryNewProjects, btnGalleryTopProjects, btnGalleryHotProjects, btnGalleryExit;
 
     private ProjectSettingsDatabase database;
     private ProjectListAdapter listAdapter;
+    private GalleryProjectSettingsPopup settingsPopup;
+
+    private int galleryMode = 0;
 
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {
@@ -59,33 +66,52 @@ public class ActivityGallery extends AppCompatActivity implements AbsListView.On
         }
 
         database = new ProjectSettingsDatabase ( this, null );
+
+        /*FakeDataGenerator.rand.setSeed ( 1239 );
+        for (int i = 0; i < 12; i++){
+            database.addProject ( FakeDataGenerator.debugRandomSettings (), database.getMaxId ( PUBLIC_TABLE_NAME ) + 1, PUBLIC_TABLE_NAME );
+            database.addProject ( FakeDataGenerator.debugRandomSettings (), database.getMaxId ( PRIVATE_TABLE_NAME ) + 1, PRIVATE_TABLE_NAME );
+        }*/
+
         if (addNewProject) {
-            if (settings.userData == null)
+            if (settings.getUserData () == null)
                 Toast.makeText ( this, "There was a problem when adding the project!", Toast.LENGTH_SHORT ).show ( );
             else {
-                long maxId = database.getMaxId ( ProjectSettingsDatabase.Constants.PRIVATE_TABLE_NAME );
-                database.addProject ( settings, 1 + maxId, ProjectSettingsDatabase.Constants.PRIVATE_TABLE_NAME );
+                long maxId = database.getMaxId ( PRIVATE_TABLE_NAME );
+                database.addProject ( settings, 1 + maxId, PRIVATE_TABLE_NAME );
             }
         }
 
         btnGalleryMyProjects = findViewById(R.id.btnGalleryMyProjects);
         btnGalleryNewProjects = findViewById(R.id.btnGalleryNewProjects);
         btnGalleryTopProjects = findViewById(R.id.btnGalleryTopProjects);
+        btnGalleryHotProjects = findViewById(R.id.btnGalleryHotProjects);
+
         btnGalleryExit = findViewById(R.id.btnGalleryExit);
         lsGalleryProjects = findViewById(R.id.lsGalleryProjects);
 
-        List<ProjectSettings> projects = new ArrayList<> ();
+        listAdapter = new ProjectListAdapter(this, R.layout.list_gallery_project, new ArrayList<> (  ));
+        applyList(PRIVATE_TABLE_NAME, COLUMN_CREATED_DATE);
 
-        listAdapter = new ProjectListAdapter(this, R.layout.list_gallery_project, projects);
+        btnGalleryMyProjects.setOnClickListener ( v -> {
+            galleryMode = GALLERY_MODE_PRIVATE;
+            applyList(PRIVATE_TABLE_NAME, COLUMN_CREATED_DATE);
+        } );
 
-        List<ProjectSettings> list;
-        list = database.toList ( 0, 5, ProjectSettingsDatabase.Constants.PRIVATE_TABLE_NAME );
-        if (list == null || list.size () == 0) {
-            Toast.makeText ( this, "No Projects Found", Toast.LENGTH_SHORT ).show ( );
-        }
-        else {
-            projects.addAll ( list );
-        }
+        btnGalleryNewProjects.setOnClickListener ( v -> {
+            galleryMode = GALLERY_MODE_PUBLIC_NEW;
+            applyList(PUBLIC_TABLE_NAME, COLUMN_CREATED_DATE);
+        } );
+
+        btnGalleryTopProjects.setOnClickListener ( v -> {
+            galleryMode = GALLERY_MODE_PUBLIC_TOP;
+            applyList(PUBLIC_TABLE_NAME, COLUMN_PUBLIC_RATING);
+        } );
+
+        btnGalleryHotProjects.setOnClickListener ( v -> {
+            galleryMode = GALLERY_MODE_PUBLIC_HOT;
+            applyList(PUBLIC_TABLE_NAME, COLUMN_PUBLIC_VIEWS);
+        } );
 
         btnGalleryExit.setOnClickListener ( v -> finish () );
 
@@ -93,21 +119,35 @@ public class ActivityGallery extends AppCompatActivity implements AbsListView.On
         lsGalleryProjects.setAdapter ( listAdapter );
         lsGalleryProjects.setOnItemClickListener ( ( parent, view, position, id ) -> {
             ProjectSettings settings = ((ProjectListAdapter) lsGalleryProjects.getAdapter ( )).getItem ( position );
-            GalleryProjectSettingsPopup popup = new GalleryProjectSettingsPopup ( context, settings, true );
-            popup.show ( );
+            if (galleryMode == GALLERY_MODE_PRIVATE) {
+                settingsPopup = new GalleryProjectSettingsPopup ( context, settings, true, v -> {
+                    if (database.hasOccurrence ( settings, PUBLIC_TABLE_NAME )) {
+                        Toast.makeText ( context, "Projects with the same name was already shared!", Toast.LENGTH_SHORT ).show ( );
+                    } else {
+                        database.addProject ( settings, database.getMaxId ( PUBLIC_TABLE_NAME ) + 1, PUBLIC_TABLE_NAME );
+                        applyList ( PUBLIC_TABLE_NAME, COLUMN_CREATED_DATE );
+                        if (settingsPopup != null)
+                            settingsPopup.dismiss ( );
+                    }
+                } );
+            }
+            else {
+                settingsPopup = new GalleryProjectSettingsPopup ( context, settings );
+            }
+            settingsPopup.show ( );
         } );
         lsGalleryProjects.setOnScrollListener ( this );
     }
 
     public void applyList(String table, String sortBy) {
-        List<ProjectSettings> projects = new ArrayList<> ();
+        listAdapter.clear ();
         List<ProjectSettings> list;
-        list = database.toList ( 0, 5, table, sortBy );
+        list = database.toList ( 0, 200, table, sortBy );
         if (list == null || list.size () == 0) {
             Toast.makeText ( this, "No Projects Found", Toast.LENGTH_SHORT ).show ( );
         }
         else {
-            projects.addAll ( list );
+            listAdapter.addAll ( list );
         }
     }
 
@@ -135,7 +175,7 @@ public class ActivityGallery extends AppCompatActivity implements AbsListView.On
 
             int start = lsGalleryProjects.getCount ();
             List<ProjectSettings> list;
-            list = database.toList ( start, start + 1, ProjectSettingsDatabase.Constants.PRIVATE_TABLE_NAME );
+            list = database.toList ( start, start + 1, PRIVATE_TABLE_NAME );
             if (list == null || list.size () == 0) {
                 Toast.makeText ( this, "No More Projects Found", Toast.LENGTH_SHORT ).show ( );
             }
