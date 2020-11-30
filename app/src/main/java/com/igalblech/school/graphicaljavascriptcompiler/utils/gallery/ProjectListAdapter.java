@@ -54,13 +54,13 @@ public class ProjectListAdapter extends ArrayAdapter<ProjectSettings> {
         tvListGalleryCreated = convertView.findViewById ( R.id.tvListGalleryCreated );
         tvListGalleryLast = convertView.findViewById ( R.id.tvListGalleryLast );
 
-        if (settings.userData != null) {
-            tvProjectTitle.setText ( String.format ( "%s - %s", settings.userData.getUsername ( ), settings.title ) );
+        if (settings.getUserData () != null) {
+            tvProjectTitle.setText ( String.format ( "%s - %s", settings.getUserData ().getUsername ( ), settings.getTitle () ) );
         }
-        tvListGalleryWidth.setText ( String.format (Locale.ENGLISH, "Width - %d", settings.width ) );
-        tvListGalleryHeight.setText ( String.format (Locale.ENGLISH, "Height - %d", settings.height ) );
-        tvListGalleryCreated.setText ( String.format (Locale.ENGLISH, "Date Created - %s", dateToString ( settings.dateCreated )) );
-        tvListGalleryLast.setText ( String.format (Locale.ENGLISH, "Date Updated - %s", dateToString ( settings.lastUpdated )) );
+        tvListGalleryWidth.setText ( String.format (Locale.ENGLISH, "Width - %d", settings.getWidth () ) );
+        tvListGalleryHeight.setText ( String.format (Locale.ENGLISH, "Height - %d", settings.getHeight () ) );
+        tvListGalleryCreated.setText ( String.format (Locale.ENGLISH, "Date Created - %s", dateToString ( settings.getDateCreated () )) );
+        tvListGalleryLast.setText ( String.format (Locale.ENGLISH, "Date Updated - %s", dateToString ( settings.getLastUpdated () )) );
 
         return convertView;
     }

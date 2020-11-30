@@ -16,57 +16,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d79dd5b-9ea3-4a88-a2d8-ee302c3ea291" name="Default Changelist" comment="A lot of things">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/hamoud_habibi-playstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/FakeDataGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/GalleryProjectSettingsPopup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectSettingsDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/V8ScriptExecutionThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/hamoud_habibi_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_gallery_project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_gallery_project_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_project_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/hamoud_habibi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/hamoud_habibi_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/hamoud_habibi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/hamoud_habibi_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/hamoud_habibi_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/hamoud_habibi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/hamoud_habibi_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/hamoud_habibi_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/hamoud_habibi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/hamoud_habibi_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/hamoud_habibi_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/hamoud_habibi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/hamoud_habibi_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/hamoud_habibi_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/hamoud_habibi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/hamoud_habibi_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/hamoud_habibi_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivitySettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity/layout/settings_activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity/values/arrays.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity/xml/root_preferences.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_3_2_0_beta_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_3_2_0_beta_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_9_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpclient_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpcore_4_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/GraphicalJavascriptImage.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/GraphicalJavascriptImage.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
@@ -74,34 +32,24 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityGallery.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityGallery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/interfaces/ActivityBase.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/ScriptFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/ScriptFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/about/AboutFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/about/AboutFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/home/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/login/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/login/LoginFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/register/RegisterFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/register/RegisterFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/tutorial/TutorialFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/tutorial/TutorialFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/FakeDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/FakeDataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/GalleryProjectSettingsPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/GalleryProjectSettingsPopup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectSettingsDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectSettingsDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/CreateProjectPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/CreateProjectPopup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettingsPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettingsPopup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/RenderColorFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/RenderColorFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserDataDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserDataDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeEditText.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeEditText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/hamoud_habibi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/layout/activity_gallery.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/layout/popup_project_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_create_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_create_project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/V8ScriptExecutionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/V8ScriptExecutionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_gallery_project_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_gallery_project_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main_nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_nav_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/project_color_model_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/project_color_model_menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/New folder/LoggedInUserView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/New folder/LoginFormState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/New folder/LoginResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/New folder/LoginViewModelFactory.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +59,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_9_API_27]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -177,6 +125,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jUjb0UTx5KvE3PWGkNtUL2LTnt" />
@@ -199,7 +152,7 @@
     <property name="android-custom-viewE:/SDK/Android/Sdk/sources/android-29/android/widget/AbsListView.java_SELECTED" value="AbsListView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/Nexus_9_API_27 [emulator-5554]/data/data/com.igalblech.school.graphicaljavascriptcompiler/databases" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/data/com.igalblech.school.graphicaljavascriptcompiler/databases" />
     <property name="multi-representation-previewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/AppCompatEditText.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/AndroidStudioProjects/GraphicalJavascriptImage/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/BitmapView.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/AndroidStudioProjects/GraphicalJavascriptImage/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeEditText.java_selected" value="Custom views" />
@@ -216,18 +169,8 @@
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.igalblech.school.graphicaljavascriptcompiler.utils.gallery" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\java\com\igalblech\school\graphicaljavascriptcompiler\utils\project" />
-      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\libs" />
-      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\libs" />
-      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\layout" />
-      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\menu" />
-    </key>
-    <key name="android.template.packageName">
-      <recent name="com.igalblech.school.graphicaljavascriptcompiler" />
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\mipmap-mdpi" />
@@ -236,17 +179,30 @@
       <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\layout\activity\layout" />
       <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\layout\activity" />
     </key>
+    <key name="android.template.packageName">
+      <recent name="com.igalblech.school.graphicaljavascriptcompiler" />
+    </key>
+    <key name="android.template.434174824">
+      <recent name="com.igalblech.school.graphicaljavascriptcompiler" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.igalblech.school.graphicaljavascriptcompiler" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\java\com\igalblech\school\graphicaljavascriptcompiler\utils\project" />
+      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\libs" />
+      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\libs" />
+      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\layout" />
+      <recent name="E:\AndroidStudioProjects\GraphicalJavascriptImage\app\src\main\res\menu" />
+    </key>
+    <key name="android.template.-514207632">
       <recent name="com.igalblech.school.graphicaljavascriptcompiler" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.igalblech.school.graphicaljavascriptcompiler.utils.project" />
     </key>
-    <key name="android.template.-514207632">
-      <recent name="com.igalblech.school.graphicaljavascriptcompiler" />
-    </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.igalblech.school.graphicaljavascriptcompiler.utils.gallery" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -408,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603992792205</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="A lot of things">
+      <created>1606313597119</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606313597119</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -440,10 +403,10 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="249" y="138" key="#PSD/0.0.1463.783@0.0.1463.783" timestamp="1606238358717" />
-    <state x="537" y="99" width="749" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1606240165967">
+    <state x="714" y="198" width="749" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1606580332687">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="537" y="99" width="749" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1463.783@0.0.1463.783" timestamp="1606240165967" />
+    <state x="714" y="198" width="749" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1463.783@0.0.1463.783" timestamp="1606580332687" />
     <state x="262" y="317" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1606244676582">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
@@ -464,65 +427,65 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="75" y="93" key="AndroidCreateResourceFileDialog/0.0.1463.783@0.0.1463.783" timestamp="1604173596939" />
-    <state x="234" y="170" key="AndroidCreateXmlResourceDialog" timestamp="1606312706840">
+    <state x="113" y="184" key="AndroidCreateXmlResourceDialog" timestamp="1606765867066">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="234" y="170" key="AndroidCreateXmlResourceDialog/0.0.1463.783@0.0.1463.783" timestamp="1606312706840" />
-    <state x="128" y="0" key="CommitChangelistDialog2" timestamp="1606312676040">
+    <state x="113" y="184" key="AndroidCreateXmlResourceDialog/0.0.1463.783@0.0.1463.783" timestamp="1606765867066" />
+    <state x="128" y="0" key="CommitChangelistDialog2" timestamp="1606765440000">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="128" y="0" key="CommitChangelistDialog2/0.0.1463.783@0.0.1463.783" timestamp="1606312676040" />
+    <state x="128" y="0" key="CommitChangelistDialog2/0.0.1463.783@0.0.1463.783" timestamp="1606765440000" />
     <state x="93" y="93" width="1277" height="597" key="DiffContextDialog" timestamp="1603897252797">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="93" y="93" width="1277" height="597" key="DiffContextDialog/0.0.1463.783@0.0.1463.783" timestamp="1603897252797" />
-    <state x="512" y="131" key="FileChooserDialogImpl" timestamp="1606244505854">
+    <state x="512" y="131" key="FileChooserDialogImpl" timestamp="1606767005539">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="512" y="131" key="FileChooserDialogImpl/0.0.1463.783@0.0.1463.783" timestamp="1606244505854" />
-    <state width="1420" height="141" key="GridCell.Tab.0.bottom" timestamp="1606312235493">
+    <state x="512" y="131" key="FileChooserDialogImpl/0.0.1463.783@0.0.1463.783" timestamp="1606767005539" />
+    <state width="1420" height="190" key="GridCell.Tab.0.bottom" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.0.bottom/0.0.1463.783@0.0.1463.783" timestamp="1606312235493" />
-    <state width="1420" height="141" key="GridCell.Tab.0.center" timestamp="1606312235493">
+    <state width="1420" height="190" key="GridCell.Tab.0.bottom/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.0.center" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.0.center/0.0.1463.783@0.0.1463.783" timestamp="1606312235493" />
-    <state width="1420" height="141" key="GridCell.Tab.0.left" timestamp="1606312235492">
+    <state width="1420" height="190" key="GridCell.Tab.0.center/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.0.left" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.0.left/0.0.1463.783@0.0.1463.783" timestamp="1606312235492" />
-    <state width="1420" height="141" key="GridCell.Tab.0.right" timestamp="1606312235493">
+    <state width="1420" height="190" key="GridCell.Tab.0.left/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.0.right" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.0.right/0.0.1463.783@0.0.1463.783" timestamp="1606312235493" />
-    <state width="1420" height="190" key="GridCell.Tab.1.bottom" timestamp="1606241866061">
+    <state width="1420" height="190" key="GridCell.Tab.0.right/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.1.bottom" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="190" key="GridCell.Tab.1.bottom/0.0.1463.783@0.0.1463.783" timestamp="1606241866061" />
-    <state width="1420" height="190" key="GridCell.Tab.1.center" timestamp="1606241866061">
+    <state width="1420" height="190" key="GridCell.Tab.1.bottom/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.1.center" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="190" key="GridCell.Tab.1.center/0.0.1463.783@0.0.1463.783" timestamp="1606241866061" />
-    <state width="1420" height="190" key="GridCell.Tab.1.left" timestamp="1606241866061">
+    <state width="1420" height="190" key="GridCell.Tab.1.center/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.1.left" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="190" key="GridCell.Tab.1.left/0.0.1463.783@0.0.1463.783" timestamp="1606241866061" />
-    <state width="1420" height="190" key="GridCell.Tab.1.right" timestamp="1606241866061">
+    <state width="1420" height="190" key="GridCell.Tab.1.left/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state width="1420" height="190" key="GridCell.Tab.1.right" timestamp="1606567845336">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state width="1420" height="190" key="GridCell.Tab.1.right/0.0.1463.783@0.0.1463.783" timestamp="1606241866061" />
-    <state x="324" y="124" key="Vcs.Push.Dialog.v2" timestamp="1606312200924">
+    <state width="1420" height="190" key="GridCell.Tab.1.right/0.0.1463.783@0.0.1463.783" timestamp="1606567845336" />
+    <state x="324" y="124" key="Vcs.Push.Dialog.v2" timestamp="1606313619722">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="324" y="124" key="Vcs.Push.Dialog.v2/0.0.1463.783@0.0.1463.783" timestamp="1606312200924" />
+    <state x="324" y="124" key="Vcs.Push.Dialog.v2/0.0.1463.783@0.0.1463.783" timestamp="1606313619722" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityProject.java</url>
-          <line>37</line>
+          <line>39</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

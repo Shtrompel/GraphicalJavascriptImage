@@ -2,9 +2,12 @@ package com.igalblech.school.graphicaljavascriptcompiler;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -138,6 +141,8 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
             showLogoutConfirmation ( );
         } else if (id == R.id.navigation_main_register) {
             fragment = new RegisterFragment ( );
+        } else if (id == R.id.navigation_main_settings) {
+            startActivity ( new Intent ( this, ActivitySettings.class ) );
         } else {
             return false;
         }
@@ -188,6 +193,18 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         dialog.setNegativeButton("Cancel", ( dialog12, which ) ->{});
         AlertDialog alertDialog=dialog.create();
         alertDialog.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu( Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_nav_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected ( @NonNull MenuItem item ) {
+        return onNavigationItemSelected(item);
     }
 
     public UserData getUserData() {

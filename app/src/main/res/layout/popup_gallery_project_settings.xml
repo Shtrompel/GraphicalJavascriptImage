@@ -23,7 +23,7 @@
                 android:id="@+id/tvPopupGallerySettingsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title"
+                android:text="@string/test"
                 android:layout_margin="5dp"
                 />
 
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="200dp"
                 android:textSize="12sp"
-                android:text="@string/description"
+                android:text="@string/test"
                 android:layout_margin="5dp"
                 android:maxLines="16"
                 android:singleLine="false"
@@ -62,17 +62,18 @@
 
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/tvPopupRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:theme="@style/RatingBar"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:style="?android:attr/buttonBarStyle"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:style="?android:attr/buttonBarStyle">
 
         <Button
             android:id="@+id/btnPopupGallerySettingsClose"

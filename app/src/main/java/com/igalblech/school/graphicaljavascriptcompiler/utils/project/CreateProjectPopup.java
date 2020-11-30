@@ -98,15 +98,12 @@ public class CreateProjectPopup extends Dialog {
             boolean hasAlpha = cbHasAlpha.isChecked ( );
 
             ProjectSettings settings1;
-            settings1 = new ProjectSettings ( );
-            settings1.format = new RenderColorFormat ( colorModel, channelBits, isFloat, hasAlpha );
-            settings1.width = renderWidth;
-            settings1.height = renderHeight;
-            settings1.dateCreated = Calendar.getInstance ( ).getTime ( );
-            settings1.lastUpdated = Calendar.getInstance ( ).getTime ( );
-            settings1.code = "";
-            settings1.description = "";
-            settings1.userData = userData;
+            settings1 = new ProjectSettings (
+                    userData,
+                    new RenderColorFormat ( colorModel, channelBits, isFloat, hasAlpha ),
+                    renderWidth,
+                    renderHeight
+                    );
 
             dismiss ( );
 

@@ -62,10 +62,10 @@ public class ScriptFragment extends Fragment {
 
     public ScriptFragment( ProjectSettings settings) {
         this.settings = settings;
-        if (settings.userData == null)
+        if (settings.getUserData () == null)
             Log.d("Developer", "ScriptFragment 1 settings.userData is null");
-        if (settings.code.equals ( "" ))
-            this.settings.code = JS_CONST_DEFAULT;
+        if (settings.getCode ().equals ( "" ))
+            this.settings.setCode ( JS_CONST_DEFAULT );
     }
 
     @Nullable
@@ -83,13 +83,13 @@ public class ScriptFragment extends Fragment {
         cetScript = view.findViewById(R.id.cetScript);
         pnRenderingProgress = view.findViewById ( R.id.pnRenderingProgress );
 
-        cetScript.setText (this.settings.code);
+        cetScript.setText (this.settings.getCode ());
         cetScript.setCltScript ( cltScript );
         cetScript.setLines(15);
         btnExecute.setOnClickListener ( v -> {
                     Editable code = cetScript.getText ( );
                     if (code != null)
-                        settings.code = code.toString ( );
+                        settings.setCode ( code.toString ( ) );
                     Activity activity = getActivity ( );
                     if (activity != null) {
                         new V8ScriptExecutionThread ( (ActivityProject) getActivity ( ), pnRenderingProgress ).execute ( settings );
@@ -97,7 +97,7 @@ public class ScriptFragment extends Fragment {
                 }
         );
         btnExecute.setPressed(false);
-        pnRenderingProgress.setMax ( this.settings.width * this.settings.height );
+        pnRenderingProgress.setMax ( this.settings.getWidth () * this.settings.getHeight () );
         pnRenderingProgress.setVisibility(View.GONE);
 
         btnSettings.setOnClickListener ( v -> {
@@ -109,7 +109,7 @@ public class ScriptFragment extends Fragment {
         } );
 
         btnScriptShare.setOnClickListener ( v -> {
-            if (settings.title.equals ( "" )) {
+            if (settings.getTitle ().equals ( "" )) {
                 Toast.makeText ( getContext (), getString( R.string.project_title_request), Toast.LENGTH_SHORT ).show ( );
                 Context context = getContext ();
                 if (context != null) {
@@ -121,7 +121,7 @@ public class ScriptFragment extends Fragment {
                 Intent sendIntent = new Intent ( );
                 sendIntent.setAction ( Intent.ACTION_SEND );
 
-                if (settings.userData == null) {
+                if (settings.getUserData () == null) {
                     Toast.makeText ( getContext ( ), "You aren't logged in!", Toast.LENGTH_SHORT ).show ( );
                     return;
                 }
@@ -129,10 +129,10 @@ public class ScriptFragment extends Fragment {
                 StringBuilder ss = new StringBuilder (  );
                 ss.append ("This is a shared code from the app \"Graphical Javascript Images\"\n");
                 ss.append ( "Username : " );
-                ss.append ( settings.userData.getUsername ( ) );
+                ss.append ( settings.getUserData ().getUsername ( ) );
                 ss.append ( "\n" );
 
-                String email = settings.userData.getEmail ( );
+                String email = settings.getUserData ().getEmail ( );
                 if (!email.equals ( "" )) {
                     ss.append ( "Email : " );
                     ss.append ( email );
@@ -140,10 +140,10 @@ public class ScriptFragment extends Fragment {
                 }
 
                 ss.append ( "Title : " );
-                ss.append ( settings.title );
+                ss.append ( settings.getTitle () );
                 ss.append ( "\n" );
 
-                String description = settings.description;
+                String description = settings.getDescription ();
                 if (!description.equals ( "" )) {
                     ss.append ( "Description : " );
                     ss.append ( description );
@@ -151,7 +151,7 @@ public class ScriptFragment extends Fragment {
                 }
 
                 ss.append ( "Code : \n" );
-                ss.append ( settings.code );
+                ss.append ( settings.getCode () );
                 ss.append ( "\n" );
 
                 sendIntent.setType ( "text/plain" );
@@ -162,7 +162,7 @@ public class ScriptFragment extends Fragment {
         } );
 
         btnScriptShareOnGallery.setOnClickListener ( v -> {
-            if (settings.title.equals ( "" )) {
+            if (settings.getTitle ().equals ( "" )) {
                 Toast.makeText ( getContext ( ), R.string.project_title_request, Toast.LENGTH_SHORT ).show ( );
                 Context context = getContext ( );
                 if (context != null) {
@@ -170,7 +170,7 @@ public class ScriptFragment extends Fragment {
                     settingsPopup.show ( );
                 }
             } else {
-                if (settings.userData == null)
+                if (settings.getUserData () == null)
                     Log.d("Developer", "ScriptFragment settings.userData is null");
 
                 Intent intent = new Intent ( getActivity (), ActivityGallery.class );
@@ -181,12 +181,10 @@ public class ScriptFragment extends Fragment {
         } );
 
         btnScriptBack.setOnClickListener ( v -> {
-            AlertDialog alertDialog = new AlertDialog.Builder( getContext ()).create();
-            alertDialog.setTitle("Are you sure?");
-            alertDialog.setMessage("Unsaved data will be lost");
-            alertDialog.setButton("OK", ( dialog, which ) -> getActivity ().finish () );
-            alertDialog.setButton ( DialogInterface.BUTTON_NEGATIVE, "Cancel", ( dialog, which ) -> alertDialog.dismiss () );
-            alertDialog.show();
+            Activity activity = getActivity ();
+            if (activity != null) {
+                ((ActivityProject)activity).exitProjectActivity ();
+            }
         } );
 
         return view;

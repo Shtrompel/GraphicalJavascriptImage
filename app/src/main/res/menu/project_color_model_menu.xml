@@ -16,4 +16,9 @@
         android:orderInCategory="2"
         />
 
+    <item
+        android:title="@string/cmyk"
+        android:orderInCategory="3"
+        />
+
 </menu>
