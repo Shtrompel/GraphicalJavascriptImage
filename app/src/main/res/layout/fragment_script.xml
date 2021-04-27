@@ -3,16 +3,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#FFBBBBBB">
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         >
 
         <ProgressBar
@@ -28,53 +27,58 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:background="#EEEEEEFF"
-            style="?android:attr/buttonBarStyle"
             android:id="@+id/btnExecute"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_margin="15dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:text="@string/execute" />
 
         <Button
-            android:background="#EEEEEEFF"
-            style="?android:attr/buttonBarStyle"
             android:id="@+id/btnSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_margin="15dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:text="@string/settings" />
-        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="15dp"
         >
 
-        <com.igalblech.school.graphicaljavascriptcompiler.views.CodeLineText
-            android:id="@+id/cltScript"
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:gravity="start|top"
-            android:minWidth="25dp"
-            android:maxWidth="25dp"
-            android:background="#eeeeee"
-            android:inputType="textMultiLine"
-            android:scrollbars="vertical"
-            android:lines="15"
-            />
+            <com.igalblech.school.graphicaljavascriptcompiler.views.CodeLineText
+                android:id="@+id/cltScript"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:gravity="start|top"
+                android:minWidth="25dp"
+                android:maxWidth="25dp"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:lines="15"
+                />
 
-        <com.igalblech.school.graphicaljavascriptcompiler.views.CodeEditText
-            android:id="@+id/cetScript"
+
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FFEEEEEE"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:lines="15"
-            android:scrollbars="vertical"
-            />
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="false"
+            android:fillViewport="true">
+                <com.igalblech.school.graphicaljavascriptcompiler.views.CodeEditText
+                    android:id="@+id/cetScript"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:lines="15"
+                    android:fadeScrollbars="false"
+                    android:scrollbars="vertical"
+                    />
+        </HorizontalScrollView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -83,33 +87,30 @@
         >
 
         <Button
-            android:background="#EEEEEEFF"
-            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/back"
             android:id="@+id/btnScriptBack"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
-            android:background="#EEEEEEFF"
-            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/share"
             android:id="@+id/btnScriptShare"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
             android:id="@+id/btnScriptShareOnGallery"
-            android:background="#EEEEEEFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_script_share_onGallery"
-            android:layout_margin="10dp"
-            style="?android:attr/buttonBarStyle"
+            android:layout_margin="5dp"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
     </LinearLayout>

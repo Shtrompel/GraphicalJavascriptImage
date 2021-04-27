@@ -1,8 +1,8 @@
 package com.igalblech.school.graphicaljavascriptcompiler.utils.gallery;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
@@ -11,9 +11,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataDatabase;
-
-import org.apache.harmony.awt.ContextStorage;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -22,10 +19,15 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
+/**
+ * Saves all of the projects in a database.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ActivityGallery
+ */
 public class ProjectSettingsDatabase extends SQLiteOpenHelper {
 
     public static class Constants {
@@ -36,7 +38,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
         public static final String PUBLIC_TABLE_NAME = "public_projects";
 
         public static final String COLUMN_DATA = "data";
-        public static final String COLUMN_CREATED_DATE = "created_date";
+        public static final String COLUMN_UPDATED_DATE = "created_date";
         public static final String COLUMN_ID = "private_id";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_TITLE = "title";
@@ -65,7 +67,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
                 Constants.PRIVATE_TABLE_NAME,
                 formatColumn ( Constants.COLUMN_ID, "INTEGER" ),
                 formatColumn ( Constants.COLUMN_DATA, "BLOB" ),
-                formatColumn ( Constants.COLUMN_CREATED_DATE, "TEXT"),
+                formatColumn ( Constants.COLUMN_UPDATED_DATE, "LONG"),
                 formatColumn ( Constants.COLUMN_USERNAME, "TEXT"),
                 formatColumn ( Constants.COLUMN_TITLE, "TEXT")
                 );
@@ -76,7 +78,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
                 Constants.PUBLIC_TABLE_NAME,
                 formatColumn ( Constants.COLUMN_ID, "INTEGER" ),
                 formatColumn ( Constants.COLUMN_DATA, "BLOB" ),
-                formatColumn ( Constants.COLUMN_CREATED_DATE, "TEXT"),
+                formatColumn ( Constants.COLUMN_UPDATED_DATE, "LONG"),
                 formatColumn ( Constants.COLUMN_USERNAME, "TEXT"),
                 formatColumn ( Constants.COLUMN_TITLE, "TEXT"),
                 formatColumn ( Constants.COLUMN_PUBLIC_VIEWS, "INTEGER"),
@@ -90,7 +92,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
 
     }
 
-    public List<ProjectSettings> toList(int start, int end, String tableName, String sort) {
+    public List<ProjectSettings> toList( int start, int end, String tableName, String sort) {
         List<ProjectSettings> ret = new ArrayList<> (  );
 
         SQLiteDatabase db = getReadableDatabase ();
@@ -122,8 +124,10 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
                     continue;
                 }
 
-                if (settings != null)
+                if (settings != null) {
+                    long l = c.getLong ( c.getColumnIndex ( Constants.COLUMN_UPDATED_DATE ) );
                     ret.add ( settings );
+                }
             }
             i++;
         }
@@ -133,7 +137,7 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
     }
 
     public List<ProjectSettings> toList(int start, int end, String tableName) {
-        return toList(start, end, tableName, Constants.COLUMN_CREATED_DATE);
+        return toList(start, end, tableName, Constants.COLUMN_UPDATED_DATE);
     }
 
     public boolean hasOccurrence(ProjectSettings projectSettings, String tableName) {
@@ -146,45 +150,53 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
                 projectSettings.getTitle ()
         );
         Cursor cursor = database.rawQuery ( sql, null );
-        return cursor.getCount () == 1;
+        boolean ret = cursor.getCount () == 1;
+        cursor.close ();
+        return ret;
     }
 
-    public boolean addProject(ProjectSettings projectSettings, long id, String tableName) {
+    public ByteArrayOutputStream projectToByte(ProjectSettings projectSettings) throws IOException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream out = new ObjectOutputStream ( bos );
+        out.writeObject ( projectSettings );
+        out.flush ( );
+        bos.close ( );
+        return bos;
+    }
+
+    public void addProject( ProjectSettings projectSettings, long id, String tableName) {
         boolean ret = false;
         SQLiteDatabase db = getWritableDatabase();
         db.beginTransaction();
 
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        ObjectOutputStream out;
+        ByteArrayOutputStream bos;
         try {
-            out = new ObjectOutputStream ( bos );
-            out.writeObject ( projectSettings );
-            out.flush ( );
-            bos.close ( );
+            bos = projectToByte(projectSettings);
         }
         catch (IOException e) {
-            Log.d ( "Developer", e.toString () );
-            return false;
+            Log.d ( "Developer", Arrays.toString ( e.getStackTrace ( ) ) );
+            e.printStackTrace ();
+            return;
         }
 
         try{
             String sql = "";
-            if (tableName == Constants.PRIVATE_TABLE_NAME) {
+            if (Objects.equals ( tableName, Constants.PRIVATE_TABLE_NAME )) {
                 sql = String.format ( "INSERT INTO %s (%s, %s, %s, %s, %s) VALUES(?, ?, ?, ?, ?)",
                         tableName,
                         Constants.COLUMN_ID,
                         Constants.COLUMN_DATA,
-                        Constants.COLUMN_CREATED_DATE,
+                        Constants.COLUMN_UPDATED_DATE,
                         Constants.COLUMN_USERNAME,
                         Constants.COLUMN_TITLE
                 );
             }
-            else if (tableName == Constants.PUBLIC_TABLE_NAME) {
+            else if (Objects.equals ( tableName, Constants.PUBLIC_TABLE_NAME )) {
                 sql = String.format ( "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s) VALUES(?, ?, ?, ?, ?, ?, ?)",
                         tableName,
                         Constants.COLUMN_ID,
                         Constants.COLUMN_DATA,
-                        Constants.COLUMN_CREATED_DATE,
+                        Constants.COLUMN_UPDATED_DATE,
                         Constants.COLUMN_USERNAME,
                         Constants.COLUMN_TITLE,
                         Constants.COLUMN_PUBLIC_VIEWS,
@@ -196,10 +208,14 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
             insertStmt.clearBindings();
             insertStmt.bindLong(1, id);
             insertStmt.bindBlob(2, bos.toByteArray());
-            insertStmt.bindLong (3, projectSettings.getLastUpdated ().getTime ());
+
+            long l = projectSettings.getLastUpdated ().getMillis ();
+            //Log.d("Developer", l + " = " + projectSettings.getLastUpdated ().toString ());
+
+            insertStmt.bindLong (3, l);
             insertStmt.bindString (4, projectSettings.getUserData ().getUsername ());
             insertStmt.bindString (5, projectSettings.getTitle ());
-            if (tableName == Constants.PUBLIC_TABLE_NAME) {
+            if (Objects.equals ( tableName, Constants.PUBLIC_TABLE_NAME )) {
                 insertStmt.bindLong (6, projectSettings.getViews ());
                 insertStmt.bindDouble (7, projectSettings.getRatings ());
             }
@@ -208,15 +224,40 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
             db.setTransactionSuccessful();
             db.endTransaction();
 
-            ret = true;
         }
         catch(Exception e){
             e.printStackTrace();
-            Log.d ( "Developer", e.toString () );
-            ret = false;
+            Log.d ( "Developer", Arrays.toString ( e.getStackTrace ( ) ) );
         }
 
-        return ret;
+    }
+
+    public void updateProject( String tableName, ProjectSettings projectSettings) {
+
+        ContentValues cv = new ContentValues();
+
+        ByteArrayOutputStream bos;
+        try {
+            bos = projectToByte(projectSettings);
+        } catch (IOException e) {
+            Log.d ( "Developer", Arrays.toString ( e.getStackTrace ( ) ) );
+            e.printStackTrace ();
+            return;
+        }
+        cv.put ( Constants.COLUMN_DATA, bos.toByteArray () );
+        cv.put ( Constants.COLUMN_PUBLIC_RATING, projectSettings.getRatings () );
+        cv.put ( Constants.COLUMN_PUBLIC_VIEWS, projectSettings.getViews () );
+        cv.put ( Constants.COLUMN_UPDATED_DATE, projectSettings.getViews () );
+
+        String sql = String.format ( Locale.ENGLISH,
+                "%s = ? AND %s = ?",
+                Constants.COLUMN_TITLE,
+                Constants.COLUMN_USERNAME
+                );
+        String title = projectSettings.getTitle ();
+        String username = projectSettings.getUserData ().getUsername ();
+        SQLiteDatabase database = getReadableDatabase ();
+        int ret = database.update(tableName, cv, sql, new String[]{title, username});
     }
 
     public long getMaxId(String tableName){
@@ -235,9 +276,34 @@ public class ProjectSettingsDatabase extends SQLiteOpenHelper {
         else
             maxId = -1;
 
+        assert cursor != null;
         cursor.close ();
 
         return maxId;
+    }
+
+    public void deleteProject ( String tableName, ProjectSettings settings ) {
+        SQLiteDatabase db = this.getWritableDatabase ();
+        String sql = String.format ( Locale.ENGLISH,
+                "%s = ? AND %s = ?",
+                Constants.COLUMN_TITLE,
+                Constants.COLUMN_USERNAME
+                );
+        int ret = db.delete(tableName, sql, new String[] { settings.getTitle (), settings.getUserData ().getUsername () });
+        db.close();
+    }
+
+    public void deleteProjectsBy ( String tableName, String column, String value ) {
+        SQLiteDatabase db = this.getWritableDatabase ();
+
+        String sql = String.format ( Locale.ENGLISH,
+                "DELETE FROM %s WHERE %s IS \"%s\"",
+                tableName,
+                column,
+                value
+        );
+        db.execSQL ( sql );
+        db.close();
     }
 
 }

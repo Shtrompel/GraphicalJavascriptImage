@@ -1,0 +1,80 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Database">
+        <Preference
+            app:key="delete_all_project"
+            app:title="Delete All Project"
+            android:summary="Delete all the internal projects"
+            />
+        <Preference
+            app:key="delete_user"
+            app:title="Delete User"
+            android:summary="Delete the current user"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Rendering"
+        >
+        <SwitchPreference
+            android:name="Enable Filter"
+            android:summary="Enable texture smoothing when upscaling the rendered image."
+            android:title="Enable Filter"
+            android:value="False"
+            android:key="enable_filter"
+        />
+
+        <SwitchPreference
+            android:name="Enable Antialiasing"
+            android:summary="Enable antialiasing on the rendered image."
+            android:title="Enable Antialiasing"
+            android:value="False"
+            android:key="enable_antialiasing"
+            />
+
+        <SwitchPreference
+            android:name="Enable Dithering"
+            android:summary="Enable dithering when upscaling the rendered image."
+            android:title="Enable Dithering"
+            android:value="False"
+            android:key="enable_dithering"
+            />
+
+    </PreferenceCategory>
+
+    <!--
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+    -->
+</PreferenceScreen>

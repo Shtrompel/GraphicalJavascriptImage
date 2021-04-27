@@ -9,7 +9,6 @@
     >
 
     <TextView
-        android:id="@+id/etPopupProjectTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/et_popup_project_title"

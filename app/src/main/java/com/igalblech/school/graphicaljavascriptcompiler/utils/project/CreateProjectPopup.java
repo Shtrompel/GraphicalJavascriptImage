@@ -18,8 +18,11 @@ import com.igalblech.school.graphicaljavascriptcompiler.ActivityProject;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 
-import java.util.Calendar;
-
+/**
+ * A popup that opens when the user wants to make a new project.
+ * Used in home fragment.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ui.home.HomeFragment
+ */
 public class CreateProjectPopup extends Dialog {
 
     private ProjectSettings settings;

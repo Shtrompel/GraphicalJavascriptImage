@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <item
+                android:id="@+id/navigation_main_home"
+                android:title="@string/menu_main_home"
+                android:icon="@mipmap/icons8_home"/>
+
+            <item
+                android:id="@+id/navigation_main_tutorial"
+                android:title="@string/menu_main_tutorial"
+                android:icon="@mipmap/icons8_help"/>
+        
+            <item
+                android:id="@+id/navigation_main_login"
+                android:title="@string/menu_main_login"
+                android:icon="@mipmap/icons8_login"/>
+
+            <item
+                android:id="@+id/navigation_main_register"
+                android:title="@string/menu_main_register"
+                android:icon="@mipmap/icons8_signin"/>
+
+            <item
+                android:id="@+id/navigation_main_logout"
+                android:title="@string/menu_main_logout"
+                android:icon="@mipmap/icons8_logout_rounded_left"/>
+        
+            <item
+                android:id="@+id/navigation_main_settings"
+                android:title="@string/menu_main_settings"
+                android:icon="@mipmap/icons8_settings"/>
+            <item
+                android:id="@+id/navigation_main_about"
+                android:title="@string/menu_main_about"
+                android:icon="@mipmap/icons8_about"/>
+</menu>

@@ -2,11 +2,13 @@ package com.igalblech.school.graphicaljavascriptcompiler.ui.login;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,11 @@ import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataD
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * In this fragment the user can log in to his own account.
+ * This fragment is part of the main activity.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ActivityMain
+ */
 public class LoginFragment extends Fragment {
 
     private View root;
@@ -76,11 +83,29 @@ public class LoginFragment extends Fragment {
 
     }
 
+    public void simpleTextDialog(String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity ());
+        builder.setMessage(message)
+                .setCancelable(false)
+                .setPositiveButton ( "OK", new DialogInterface.OnClickListener ( ) {
+                    @Override
+                    public void onClick ( DialogInterface dialog, int which ) {
+                        dialog.cancel ();
+                    }
+                } )
+                .setTitle ( title );
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
     public void addBehaviourToViews() {
         btnLoginApply.setOnClickListener( view -> {
             Activity activity = getActivity ();
+
             if (activity != null && ((ActivityMain)activity).hasUser ()) {
-                Toast.makeText ( getContext (), "You are already logged in! Log out from your current account to login as another one.", Toast.LENGTH_SHORT ).show ( );
+                simpleTextDialog ( "Error", "You are already logged in! Log out from your current account to login as another one." );
+
+                //Toast.makeText ( getContext (), "You are already logged in! Log out from your current account to login as another one.", Toast.LENGTH_SHORT ).show ( );
                 return;
             }
 
@@ -88,8 +113,10 @@ public class LoginFragment extends Fragment {
             String password = etLoginPassword.getText().toString();
             UserData userData = userDataManager.loginUser (username, password);
 
-            if (userData == null)
-                Toast.makeText(getContext(), "Wrong username/password!", Toast.LENGTH_SHORT).show();
+            if (userData == null) {
+                //Toast.makeText(getContext(), "Wrong username/password!", Toast.LENGTH_SHORT).show();
+                simpleTextDialog ( "Error", "Wrong username/password!" );
+            }
             else {
                 Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
 
@@ -140,15 +167,19 @@ public class LoginFragment extends Fragment {
             if (userData == null) {
                 if (isSms) {
                     if (isEmail)
-                        Toast.makeText ( getContext (), "No user with the inputted phone and email!", Toast.LENGTH_SHORT ).show ( );
+                        simpleTextDialog ( "Error", "No user with the inputted phone and email!" );
+                        //Toast.makeText ( getContext (), "No user with the inputted phone and email!", Toast.LENGTH_SHORT ).show ( );
                     else
-                        Toast.makeText ( getContext (), "No user with the inputted phone!", Toast.LENGTH_SHORT ).show ( );
+                        simpleTextDialog ( "Error",  "No user with the inputted phone!" );
+                        //Toast.makeText ( getContext (), "No user with the inputted phone!", Toast.LENGTH_SHORT ).show ( );
                 }
                 else {
                     if (isEmail)
-                        Toast.makeText ( getContext (), "No user with the inputted email!", Toast.LENGTH_SHORT ).show ( );
+                        simpleTextDialog ( "Error",  "No user with the inputted email!" );
+                        //Toast.makeText ( getContext (), "No user with the inputted email!", Toast.LENGTH_SHORT ).show ( );
                     else
-                        Toast.makeText ( getContext (), "Please fill in your email/sms", Toast.LENGTH_SHORT ).show ( );
+                        simpleTextDialog ( "Error",  "Please fill in your email/sms" );
+                        //Toast.makeText ( getContext (), "Please fill in your email/sms", Toast.LENGTH_SHORT ).show ( );
                 }
                 return;
             }
@@ -168,11 +199,11 @@ public class LoginFragment extends Fragment {
         } );
 
         btnLoginForgotPasswordApply.setOnClickListener( view -> {
-
             UserData userData = userDataManager.findUserViaCode ( etLoginForgotPasswordCode.getText ( ).toString ( ) );
 
             if (userData == null){
-                Toast.makeText ( getContext ( ), "Invalid Code", Toast.LENGTH_SHORT ).show ( );
+                simpleTextDialog("Error", "Invalid Code");
+                //Toast.makeText ( getContext ( ), "Invalid Code", Toast.LENGTH_SHORT ).show ( );
                 return;
             }
 
@@ -203,12 +234,15 @@ public class LoginFragment extends Fragment {
 
             int err;
             if ((err = UserDataValidator.validatePassword ( newPassword ) ) != UserDataValidator.ERROR_NONE ) {
-                Toast.makeText ( getContext (), UserDataValidator.errorToString ( err,"password" ), Toast.LENGTH_SHORT ).show ( );
+                simpleTextDialog("Error", UserDataValidator.errorToString ( err,"password" ));
+                //Toast.makeText ( getContext (), UserDataValidator.errorToString ( err,"password" ), Toast.LENGTH_SHORT ).show ( );
                 return;
             }
 
             if (!newPassword.equals ( passwordConfirm )) {
-                Toast.makeText ( getContext (), "Passwords do not match!", Toast.LENGTH_SHORT ).show ( );
+                simpleTextDialog("Error", "Passwords do not match!");
+
+                //Toast.makeText ( getContext (), "Passwords do not match!", Toast.LENGTH_SHORT ).show ( );
                 return;
             }
 
@@ -345,7 +379,7 @@ public class LoginFragment extends Fragment {
 
             //if (params[0] == null)
             //  return null;
-/*
+
             GMailSender sender = new GMailSender (
                     "GraphicCubeApp@gmail.com",
                     "0n93y7g5h3" );
@@ -355,14 +389,12 @@ public class LoginFragment extends Fragment {
                         params[0].message,
                         "GraphicCubeApp@gmail.com",
                         params[0].getUserData ().getEmail () );
-            } catch(
-                    Exception e)
-
+            } catch(Exception e)
             {
                 Log.d ( "developer", e.toString ( ) );
                 e.printStackTrace ( );
             }
-*/
+
             return null;
         }
     }

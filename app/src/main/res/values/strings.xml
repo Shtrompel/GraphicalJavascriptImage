@@ -5,7 +5,7 @@
     <string name="nav_header_title">User Name</string>
     <string name="nav_header_subtitle">Email</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="about_string">Hello! My name is Igal Blech and this application is my final Bagrut project for my high school software engineering. The main reason why I decided to make an app about graphical coding is to help people learn Javascript in a fun way and help people to use their creativity</string>
+    <string name="about_string">Hello! My name is Igal Blech and this application is my final project for my Software Engineering Bagrut for my high school. The main reason why I decided to make an app about graphical coding is to help people learn Javascript in a fun way and help people to use their creativity.<br>Thanks for icons8.com for providing free icons to use.</br></string>
 
     <string name="menu_tutorial_layout">Layout</string>
     <string name="menu_tutorial_login">Login</string>
@@ -62,8 +62,7 @@
     <string name="et_popup_project_has_alpha">Has Alpha</string>
     <string name="et_popup_project_is_float">Is Float</string>
     <string name="create">Create</string>
-    <string name="okay">Okay</string>
-    <string name="tv_login_forgot_password">Insert your email OR phone to recive validation code.</string>
+    <string name="tv_login_forgot_password">Insert your phone to recive validation code.</string>
     <string name="send">Send</string>
     <string name="tv_login_forgot_password_validate">Insert here your received code.</string>
     <string name="ett_login_forgot_password_code">New Password</string>
@@ -82,7 +81,6 @@
     <string name="cmyk">CMYK</string>
     <string name="color_model_text">\"Color Model : %s\"</string>
     <string name="logo_image">Logo Image</string>
-    <string name="project_publish_button">Publish</string>
     <string name="publish">Publish</string>
     <string name="close">Close</string>
 
@@ -95,6 +93,14 @@
     <string name="edit">edit</string>
     <string name="btn_gallery_top_projects">Top Projects</string>
     <string name="btn_gallery_hop_projects">Hot Projects</string>
+    <string name="delete">delete</string>
 
+
+
+    <string name="title_activity_settings">ActivitySettings</string>
+    <!-- Preference Titles -->
+    <!-- Messages Preferences -->
+    <!-- Sync Preferences -->
+    <string name="preference_file_key">MAIN_KEY</string>
 
 </resources>

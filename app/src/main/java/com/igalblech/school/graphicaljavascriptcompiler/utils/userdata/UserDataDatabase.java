@@ -6,15 +6,17 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import java.util.Locale;
 
 import lombok.Setter;
 
 
-// For basic single table databases
-
+/**
+ * Single table database that holds user information
+ */
 public class UserDataDatabase extends SQLiteOpenHelper {
 
     public static class Constants {
@@ -180,17 +182,15 @@ public class UserDataDatabase extends SQLiteOpenHelper {
 
     public int checkForClashes(UserData userData) {
         RetClass retClass = iterateThroughRows ( ( sqLiteDatabase, chosen, in, str1, str2 ) -> {
-            Log.d("developer", chosen.toString ());
-            Log.d("developer", in.toString ());
-            int v = userData.checkForClashes ( chosen );
-            if (v != UserDataValidator.ERROR_NONE) {
-                RetClass rc = new RetClass ( );
-                rc.setValue ( v );
-                return rc;
-            }
-            else
-                return null;
-            },
+                    int v = userData.checkForClashes ( chosen );
+                    if (v != UserDataValidator.ERROR_NONE) {
+                        RetClass rc = new RetClass ( );
+                        rc.setValue ( v );
+                        return rc;
+                    }
+                    else
+                        return null;
+                },
                 userData );
 
         if (retClass != null)
@@ -211,7 +211,7 @@ public class UserDataDatabase extends SQLiteOpenHelper {
                 username.replace ( "-", "" ).replace ( " ", "" ),
                 Constants.COLUMN_PASSWORD,
                 password
-                );
+        );
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase ();
         Cursor cursor =  sqLiteDatabase.rawQuery( sqlScript, null);
@@ -307,9 +307,19 @@ public class UserDataDatabase extends SQLiteOpenHelper {
                 cv ,
                 Constants.COLUMN_USERNAME + " = ?",
                 new String[]{userData.getUsername ()} );
-        Log.d("developer", "update: " + v);
 
         sqLiteDatabase.close ();
+    }
 
+    public void deleteUser ( UserData userData ) {
+        SQLiteDatabase db = getWritableDatabase ();
+        String sql = String.format ( Locale.ENGLISH,
+                "DELETE FROM %s WHERE %s IS \"%s\"",
+                Constants.TABLE_NAME,
+                Constants.COLUMN_USERNAME,
+                userData.getUsername ()
+        );
+        db.execSQL ( sql );
+        db.close ();
     }
 }

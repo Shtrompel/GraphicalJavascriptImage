@@ -3,37 +3,39 @@ package com.igalblech.school.graphicaljavascriptcompiler;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.eclipsesource.v8.V8;
-import com.eclipsesource.v8.V8Array;
-import com.eclipsesource.v8.V8ScriptException;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.ErrorFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.RenderFragment;
 import com.igalblech.school.graphicaljavascriptcompiler.ui.ScriptFragment;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.FakeDataGenerator;
-import com.igalblech.school.graphicaljavascriptcompiler.utils.gallery.ProjectSettingsDatabase;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectActivityPagerAdapter;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
 
-import java.lang.ref.WeakReference;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.Buffer;
-import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 import lombok.Getter;
 
+/**
+ * In this activity the user manages his currently open project
+ */
 public class ActivityProject extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private @Getter ProjectSettings settings;
@@ -63,6 +65,11 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
         adapter.setFragment ( ProjectActivityPagerAdapter.PAGE_RENDER, new RenderFragment () );
         adapter.setFragment ( ProjectActivityPagerAdapter.PAGE_ERROR, new ErrorFragment () );
         vpProjectFragment.setAdapter ( adapter );
+
+        ActionBar actionbar = getSupportActionBar();
+        if (actionbar != null) {
+            actionbar.setDisplayHomeAsUpEnabled ( false );
+        }
     }
 
     public void hideKeyboard() {
@@ -74,6 +81,11 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
             view = new View(this);
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.show ();
     }
 
     public void updateImage( Buffer buffer, int w, int h ) {
@@ -88,6 +100,65 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
         vpProjectFragment.setCurrentItem ( i );
     }
 
+    @Override
+    public void onBackPressed() {
+        saveProject();
+        exitProjectActivity();
+    }
+
+    public void exitProjectActivity() {
+        AlertDialog alertDialog = new AlertDialog.Builder( this ).create();
+        alertDialog.setTitle("Are you sure?");
+        alertDialog.setMessage("Unsaved data will be lost");
+        alertDialog.setButton("OK", ( dialog, which ) -> {
+            finish ();
+            saveProject();
+        } );
+        alertDialog.setButton ( DialogInterface.BUTTON_NEGATIVE, "Cancel", ( dialog, which ) -> {
+            alertDialog.dismiss ();
+        } );
+        alertDialog.show();
+
+    }
+
+    private void saveProject() {
+
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(getApplicationContext ().openFileOutput("project.class", Context.MODE_PRIVATE));
+            out.writeObject(settings);
+            out.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace ();
+            Log.e("Developer", "File write failed: " + Arrays.toString ( e.getStackTrace ( ) ) );
+        }
+
+
+    }
+
+    @Override
+    protected void onPause ( ) {
+        saveProject();
+        super.onPause ( );
+    }
+
+    @Override
+    protected void onStop ( ) {
+        saveProject();
+        super.onStop ( );
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu( Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected ( @NonNull MenuItem item ) {
+        return onNavigationItemSelected(item);
+    }
 
     @Override
     public boolean onNavigationItemSelected ( @NonNull MenuItem menuItem ) {
@@ -100,24 +171,14 @@ public class ActivityProject extends AppCompatActivity implements BottomNavigati
         } else if (itemId == R.id.navigation_project_error) {
             changeFragmentPage ( ProjectActivityPagerAdapter.PAGE_ERROR );
         } else {
-            return false;
+            // Top menu
+            Intent activityMain = new Intent ( this, ActivityMain.class );
+            activityMain.putExtra ( "fragment_id", menuItem.getItemId() );
+            startActivity ( activityMain );
         }
 
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        exitProjectActivity();
-    }
-
-    public void exitProjectActivity() {
-        AlertDialog alertDialog = new AlertDialog.Builder( this ).create();
-        alertDialog.setTitle("Are you sure?");
-        alertDialog.setMessage("Unsaved data will be lost");
-        alertDialog.setButton("OK", ( dialog, which ) -> finish () );
-        alertDialog.setButton ( DialogInterface.BUTTON_NEGATIVE, "Cancel", ( dialog, which ) -> alertDialog.dismiss () );
-        alertDialog.show();
-    }
 
 }

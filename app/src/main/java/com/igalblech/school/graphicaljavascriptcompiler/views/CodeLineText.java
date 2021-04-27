@@ -8,6 +8,12 @@ import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
+/**
+ * Located next to CodeEditText view, this view numbers each row in the text view
+ * Used in coding fragment.
+ * @see CodeEditText
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ui.ScriptFragment
+ */
 public class CodeLineText extends AppCompatTextView {
 
     private final Paint paint;

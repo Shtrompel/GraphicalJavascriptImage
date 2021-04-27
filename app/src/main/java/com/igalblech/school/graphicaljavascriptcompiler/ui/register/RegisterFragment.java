@@ -19,6 +19,11 @@ import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserData;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataValidator;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.userdata.UserDataDatabase;
 
+/**
+ * In this fragment the user can create a new account.
+ * This fragment is part of the main activity.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ActivityMain
+ */
 public class RegisterFragment extends Fragment {
 
     private View root;
@@ -61,11 +66,11 @@ public class RegisterFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
     public void addBehaviourToViews() {
-        etRegisterUsername.setText("blechigal");
+        /*etRegisterUsername.setText("blechigal");
         etRegisterEmail.setText("blechigal@gmail.com");
         etRegisterPhone.setText("058-430-2061");
         etRegisterPassword.setText("password0");
-        etRegisterPasswordRepeat.setText("password0");
+        etRegisterPasswordRepeat.setText("password0");*/
 
         btnRegisterApply.setOnClickListener( view -> {
 

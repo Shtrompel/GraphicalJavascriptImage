@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:orientation="horizontal"
-    tools:context=".ActivityGallery">
+    tools:context=".ActivityGallery"
+    android:theme="@style/AppTheme">
 
     <LinearLayout
         android:layout_width="match_parent"

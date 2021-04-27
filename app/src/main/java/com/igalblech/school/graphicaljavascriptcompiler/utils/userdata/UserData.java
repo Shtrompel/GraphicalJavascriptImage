@@ -1,17 +1,18 @@
 package com.igalblech.school.graphicaljavascriptcompiler.utils.userdata;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 
 import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Contains all of the data that each registered user has.
+ */
 @Getter
 @Setter
 public class UserData implements Parcelable, Serializable {
@@ -26,7 +27,7 @@ public class UserData implements Parcelable, Serializable {
     public static final java.util.Random RANDOM = new java.util.Random();
     public static final char[] NUMBERS = "0123456789".toCharArray();
 
-    public UserData(String username, String password, String email, String phone) {
+    public UserData(@NonNull String username, @NonNull String password, @NonNull String email, @NonNull String phone) {
         this.username = username;
         this.password = password;
         this.email = email.toLowerCase ();
@@ -148,14 +149,13 @@ public class UserData implements Parcelable, Serializable {
         return 0;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(username);
         parcel.writeString(password);
         parcel.writeString(email);
         parcel.writeString(phone);
-        parcel.writeBoolean(isVerified);
+        parcel.writeInt (isVerified ? 1 : 0);
         parcel.writeString(verificationCode);
     }
 

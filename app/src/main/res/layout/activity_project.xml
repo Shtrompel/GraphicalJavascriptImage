@@ -7,8 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:theme="@style/AppTheme"
-    android:background="@color/palette_a_pink_swan">
-
+    >
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

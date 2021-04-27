@@ -3,6 +3,9 @@ package com.igalblech.school.graphicaljavascriptcompiler.utils.userdata;
 
 import java.util.Locale;
 
+/**
+ * This class used for validation of users who try to register or log in.
+ */
 public class UserDataValidator {
 
     public static final int MIN_PASSWORD = 8;

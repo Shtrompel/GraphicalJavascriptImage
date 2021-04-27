@@ -41,7 +41,6 @@
             android:text="@string/login" />
 
         <ProgressBar
-            android:id="@+id/pbLogin"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

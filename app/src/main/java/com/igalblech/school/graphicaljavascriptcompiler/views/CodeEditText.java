@@ -20,15 +20,17 @@ import lombok.Setter;
 /**
  * Author S Mahbub Uz Zaman on 5/9/15.
  * Lisence Under GPL2
+ * The source code has been changed.
+ * This view in mainly for highlighting text for easier coding.
+ * Used in coding fragment.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ui.ScriptFragment
  */
-
-
-
 public class CodeEditText extends AppCompatEditText {
 
     private final Paint paintSelected;
 
     private int selectedLine = -1;
+    private final int lastLineCount = 0;
     private @Setter
     CodeLineText cltScript;
 
@@ -114,11 +116,6 @@ public class CodeEditText extends AppCompatEditText {
     }
 
     @Override
-    public boolean performClick ( ) {
-        return super.performClick ( );
-    }
-
-    @Override
     protected void onTextChanged ( CharSequence text, int start, int lengthBefore, int lengthAfter ) {
         super.onTextChanged ( text, start, lengthBefore, lengthAfter );
         updateSelectedLine();
@@ -165,9 +162,9 @@ public class CodeEditText extends AppCompatEditText {
 
         {
             float w = getWidth ( );
-            float h = getLineHeight ( ) + 10;
+            float h = getLineHeight ( );
             float x = 0.0f;
-            float y = selectedLine * getLineHeight ( ) + getBaseline ( ) / 2.0f + 5;
+            float y = selectedLine * getLineHeight ( ) + getBaseline ( ) / 2.0f + 10;
             canvas.drawRect ( x, y - h / 2, x + w, y + h / 2, paintSelected );
         }
 

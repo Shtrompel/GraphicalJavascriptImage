@@ -51,11 +51,11 @@
 
             <TextView
                 android:id="@+id/tvPopupGallerySettingsInfo"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:text="@string/info"
-                />
+                android:minWidth="80dp"
+                android:text="@string/info" />
 
         </LinearLayout>
     </LinearLayout>
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="horizontal"
-        android:style="?android:attr/buttonBarStyle">
+        >
 
         <Button
             android:id="@+id/btnPopupGallerySettingsClose"
@@ -81,9 +81,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:style="?android:attr/buttonBarButtonStyle"
+            style="?android:attr/buttonBarButtonStyle"
             />
-
 
         <Button
             android:id="@+id/btnProjectSettingsPublish"
@@ -91,7 +90,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:style="?android:attr/buttonBarButtonStyle"
+            style="?android:attr/buttonBarButtonStyle"
+            />
+
+        <Button
+            android:id="@+id/btnPopupGallerySettingsDelete"
+            android:text="@string/delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
@@ -100,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:style="?android:attr/buttonBarButtonStyle"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
     </LinearLayout>

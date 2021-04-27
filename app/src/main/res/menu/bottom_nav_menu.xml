@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/navigation_tutorial_layout"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@mipmap/icons8_dashboard_layout"
         android:title="@string/menu_tutorial_layout" />
 
     <item
         android:id="@+id/navigation_tutorial_login"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@mipmap/icons8_login"
         android:title="@string/menu_tutorial_login" />
 
     <item
         android:id="@+id/navigation_tutorial_project"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@mipmap/icons8_tasks"
         android:title="@string/menu_tutorial_project" />
 
     <item
         android:id="@+id/navigation_tutorial_javascript"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@mipmap/icons8_js"
         android:title="@string/menu_tutorial_javascript" />
 
 

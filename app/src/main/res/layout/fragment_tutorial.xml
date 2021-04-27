@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="?attr/actionBarSize">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@color/palette_a_vanilla_ice"
-        android:paddingTop="?attr/actionBarSize">
+    <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfViewTutorial"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_margin="@dimen/smaller_margin" />
 
-
-        <com.github.barteksc.pdfviewer.PDFView
-            android:id="@+id/pdfViewTutorial"
-            android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:layout_margin="@dimen/smaller_margin"
-            />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navTutorial"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/bigger_margin"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:foreground="?attr/selectableItemBackground"
             app:itemBackground="@color/palette_a_salt_box"
             app:itemIconTint="@color/palette_a_pink_swan"
             app:itemTextColor="@color/palette_a_pink_swan"
             app:menu="@menu/bottom_nav_menu" />
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

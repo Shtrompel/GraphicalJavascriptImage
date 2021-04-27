@@ -11,8 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.igalblech.school.graphicaljavascriptcompiler.ActivityProject;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 
+/**
+ * If the user runs his code and the code contains an error, the user
+ * can see the error in this fragment.
+ * This fragment is part of the project activity.
+ * @see ActivityProject
+ */
 public class ErrorFragment extends Fragment {
 
     TextView tvProjectError;

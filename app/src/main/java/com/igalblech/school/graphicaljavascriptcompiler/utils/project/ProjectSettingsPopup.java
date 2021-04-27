@@ -10,7 +10,11 @@ import androidx.annotation.NonNull;
 
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 
-
+/**
+ * Lets the user change the title and description of his project.
+ * Used in scripting fragment.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ui.ScriptFragment
+ */
 public class ProjectSettingsPopup extends Dialog {
 
     private final EditText etProjectSettingsTitle;

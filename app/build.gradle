@@ -68,7 +68,10 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
-    implementation 'com.google.api-client:google-api-client:1.23.0'
-    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
-    implementation 'com.google.apis:google-api-services-gmail:v1-rev83-1.23.0'
+    implementation 'joda-time:joda-time:2.10.8'
+
+    //implementation 'com.sun.mail:android-mail:1.6.2'
+    implementation 'com.sun.mail:android-activation:1.6.2'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
 }

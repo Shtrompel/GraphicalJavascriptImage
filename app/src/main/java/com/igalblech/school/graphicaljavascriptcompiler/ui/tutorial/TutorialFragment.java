@@ -1,10 +1,12 @@
 package com.igalblech.school.graphicaljavascriptcompiler.ui.tutorial;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,6 +18,11 @@ import com.github.barteksc.pdfviewer.util.FitPolicy;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 
+/**
+ * In this fragment the user can find help on how to use the app.
+ * This fragment is part of the main activity.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ActivityMain
+ */
 public class TutorialFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private PDFView pdfView;
@@ -33,10 +40,43 @@ public class TutorialFragment extends Fragment implements BottomNavigationView.O
         ViewModelProviders.of ( this ).get ( TutorialViewModel.class );
         root = inflater.inflate ( R.layout.fragment_tutorial, container, false );
 
+        Activity activity = getActivity ( );
+        assert activity != null;
+        activity.getWindow().addFlags( WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS );
+
         initializeViews();
         addBehaviourToViews();
 
+        hideSystemUI();
+
         return root;
+    }
+
+    private void hideSystemUI() {
+        // Enables regular immersive mode.
+        // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
+        // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        View decorView = getActivity ( ).getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        // Set the content to appear under the system bars so that the
+                        // content doesn't resize when the system bars hide and show.
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        // Hide the nav bar and status bar
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
+    // Shows the system bars by removing all the flags
+// except for the ones that make the content appear under the system bars.
+    private void showSystemUI() {
+        View decorView = getActivity ( ).getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 
     public void initializeViews ( ) {

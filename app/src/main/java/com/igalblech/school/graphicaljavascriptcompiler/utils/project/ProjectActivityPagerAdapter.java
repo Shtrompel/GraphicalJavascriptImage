@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+/**
+ * Adapter for projecy activity.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ActivityProject
+ */
 public class ProjectActivityPagerAdapter extends FragmentStatePagerAdapter {
 
     public static final int PAGE_SCRIPT = 0;

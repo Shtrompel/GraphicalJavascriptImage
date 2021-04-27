@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>abcdefghijklmnopqrstuvwxyz</w>
+      <w>accordinly</w>
       <w>asdasdasdasdasdasd</w>
       <w>bagrut</w>
       <w>bargut</w>
@@ -10,15 +11,26 @@
       <w>blechigal</w>
       <w>cmyk</w>
       <w>contant</w>
+      <w>dublicates</w>
+      <w>gmail</w>
       <w>graphicaljavascriptcompiler</w>
       <w>habibi</w>
       <w>hamoud</w>
       <w>igal</w>
       <w>igalblech</w>
+      <w>isfile</w>
+      <w>jsse</w>
       <w>lisence</w>
+      <w>listdir</w>
       <w>mahbub</w>
+      <w>noooo</w>
+      <w>quitwait</w>
       <w>recive</w>
       <w>recived</w>
+      <w>rfind</w>
+      <w>signin</w>
+      <w>smtp</w>
+      <w>xnet</w>
       <w>zaman</w>
     </words>
   </dictionary>

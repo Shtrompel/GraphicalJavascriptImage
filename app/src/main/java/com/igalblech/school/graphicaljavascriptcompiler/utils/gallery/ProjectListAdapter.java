@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -15,20 +14,16 @@ import androidx.annotation.RequiresApi;
 import com.igalblech.school.graphicaljavascriptcompiler.R;
 import com.igalblech.school.graphicaljavascriptcompiler.utils.project.ProjectSettings;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import static com.igalblech.school.graphicaljavascriptcompiler.ActivityGallery.dateToString;
 
+/**
+ * Adapter that used for displaying projects in a list.
+ * @see com.igalblech.school.graphicaljavascriptcompiler.ActivityGallery
+ */
 public class ProjectListAdapter extends ArrayAdapter<ProjectSettings> {
-
-    private TextView tvProjectTitle, tvListGalleryWidth,
-            tvListGalleryHeight, tvListGalleryCreated, tvListGalleryLast;
 
     public ProjectListAdapter ( Context context, int resource, List<ProjectSettings> users ) {
         super ( context, resource, users );
@@ -48,11 +43,11 @@ public class ProjectListAdapter extends ArrayAdapter<ProjectSettings> {
             convertView = LayoutInflater.from ( getContext ( ) ).inflate ( R.layout.list_gallery_project, null );
         }
 
-        tvProjectTitle = convertView.findViewById ( R.id.tvProjectTitle );
-        tvListGalleryWidth =  convertView.findViewById ( R.id.tvListGalleryWidth );
-        tvListGalleryHeight = convertView.findViewById ( R.id.tvListGalleryHeight );
-        tvListGalleryCreated = convertView.findViewById ( R.id.tvListGalleryCreated );
-        tvListGalleryLast = convertView.findViewById ( R.id.tvListGalleryLast );
+        TextView tvProjectTitle = convertView.findViewById ( R.id.tvProjectTitle );
+        TextView tvListGalleryWidth = convertView.findViewById ( R.id.tvListGalleryWidth );
+        TextView tvListGalleryHeight = convertView.findViewById ( R.id.tvListGalleryHeight );
+        TextView tvListGalleryCreated = convertView.findViewById ( R.id.tvListGalleryCreated );
+        TextView tvListGalleryLast = convertView.findViewById ( R.id.tvListGalleryLast );
 
         if (settings.getUserData () != null) {
             tvProjectTitle.setText ( String.format ( "%s - %s", settings.getUserData ().getUsername ( ), settings.getTitle () ) );
