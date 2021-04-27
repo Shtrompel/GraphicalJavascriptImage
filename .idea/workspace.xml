@@ -22,417 +22,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d79dd5b-9ea3-4a88-a2d8-ee302c3ea291" name="Default Changelist" comment="A lot of things">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_javax_mail_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_sun_mail_android_activation_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__joda_time_joda_time_2_10_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_droidsonroids_gif_android_gif_drawable_1_2_22_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/MyApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/login/GMailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/provider/JSSEProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_options_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-about-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-about-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-about-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-dashboard-layout-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-dashboard-layout-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-dashboard-layout-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-error-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-error-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-error-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-help-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-help-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-help-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-home-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-home-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-home-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-image-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-image-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-image-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-js-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-js-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-js-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-login-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-login-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-login-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-logout-rounded-left-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-logout-rounded-left-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-logout-rounded-left-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-menu-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-menu-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-menu-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-property-script-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-property-script-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-property-script-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-settings-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-settings-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-settings-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-signin-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-signin-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-signin-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-tasks-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-tasks-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/backup/icons8-tasks-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-about-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-about-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-about-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-dashboard-layout-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-dashboard-layout-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-dashboard-layout-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-error-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-error-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-error-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-help-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-help-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-help-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-home-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-home-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-home-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-image-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-image-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-image-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-js-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-js-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-js-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-login-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-login-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-login-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-logout-rounded-left-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-logout-rounded-left-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-logout-rounded-left-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-menu-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-menu-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-menu-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-property-script-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-property-script-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-property-script-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-settings-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-settings-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-settings-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-signin-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-signin-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-signin-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-tasks-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-tasks-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/icons8-tasks-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-hdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-ldpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-mdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xhdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxhdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_dashboard_layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_js.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_logout_rounded_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_property_script.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outer_files/icons/mipmap-xxxhdpi/icons8_tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_activation_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_additionnal_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_mail_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_2_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_2_4_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_eclipsesource_j2v8_j2v8_6_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_eclipsesource_j2v8_j2v8_6_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_3_2_0_beta_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_3_2_0_beta_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_9_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_client_google_api_client_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_apis_google_api_services_gmail_v1_rev83_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_1_3_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_jdk5_17_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_jackson2_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_java6_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_jetty_1_23_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_jetty_6_1_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_jetty_util_6_1_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_servlet_api_2_5_20081211.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/GraphicalJavascriptImage.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/GraphicalJavascriptImage.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityGallery.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityGallery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivityProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivitySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ActivitySettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/ErrorFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/ErrorFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/RenderFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/RenderFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/ScriptFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/ScriptFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/about/AboutFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/about/AboutFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/home/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/login/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/login/LoginFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/register/RegisterFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/register/RegisterFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/tutorial/TutorialFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/ui/tutorial/TutorialFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/FakeDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/FakeDataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/contact/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/contact/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/GalleryProjectSettingsPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/GalleryProjectSettingsPopup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectSettingsDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/gallery/ProjectSettingsDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/CreateProjectPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/CreateProjectPopup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectActivityPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectActivityPagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettingsPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/ProjectSettingsPopup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/RenderColorFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/RenderColorFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/V8ScriptExecutionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/project/V8ScriptExecutionThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserDataDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserDataDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/utils/userdata/UserDataValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/BitmapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/BitmapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeEditText.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeEditText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeLineText.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeLineText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_home_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_notifications_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/layout/settings_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/values/arrays.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity/xml/root_preferences.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/root_preferences.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_error.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_error.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_render.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_render.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_script.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_script.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tutorial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tutorial.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_gallery_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_gallery_project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_create_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_create_project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_gallery_project_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_gallery_project_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_login_forgot_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_login_forgot_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_login_new_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_login_new_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_validate_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_validate_user.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_nav_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_project_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_project_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main_nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_nav_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/hamoud_habibi.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/hamoud_habibi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/hamoud_habibi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/hamoud_habibi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/hamoud_habibi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/hamoud_habibi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/layout.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/layout.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/login.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/login.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/project.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/project.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/scripting.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/scripting.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Layout.docx" beforeDir="false" afterPath="$PROJECT_DIR$/outer_files/TutorialPDFs/Layout.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Layout.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Login.docx" beforeDir="false" afterPath="$PROJECT_DIR$/outer_files/TutorialPDFs/Login.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Login.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Project.docx" beforeDir="false" afterPath="$PROJECT_DIR$/outer_files/TutorialPDFs/Project.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Project.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Scripting.docx" beforeDir="false" afterPath="$PROJECT_DIR$/outer_files/TutorialPDFs/Scripting.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outer_files/TutorialPDFs/Scripting.pdf" beforeDir="false" />
-    </list>
+    <list default="true" id="9d79dd5b-9ea3-4a88-a2d8-ee302c3ea291" name="Default Changelist" comment="A lot of things" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -441,7 +31,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_9_API_27]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -509,7 +99,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="a" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -541,7 +131,7 @@
     <property name="android-custom-viewE:/SDK/Android/Sdk/sources/android-29/android/widget/AbsListView.java_SELECTED" value="AbsListView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="H:/Android" />
     <property name="multi-representation-previewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/AppCompatEditText.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/AndroidStudioProjects/GraphicalJavascriptImage/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/BitmapView.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/AndroidStudioProjects/GraphicalJavascriptImage/app/src/main/java/com/igalblech/school/graphicaljavascriptcompiler/views/CodeEditText.java_selected" value="Custom views" />
@@ -784,7 +374,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606768789030</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="A lot of things">
+      <created>1619549834756</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1619549834756</updated>
+    </task>
+    <task id="LOCAL-00013" summary="A lot of things">
+      <created>1619549895216</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619549895216</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -795,6 +399,17 @@
         <option value="3" />
         <option value="1" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
@@ -833,10 +448,18 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="549" y="182" key="AndroidCreateXmlResourceDialog/0.0.1463.783@0.0.1463.783" timestamp="1616327125067" />
-    <state x="512" y="131" key="FileChooserDialogImpl" timestamp="1616346163444">
+    <state x="327" y="0" key="CommitChangelistDialog2" timestamp="1619549886956">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
-    <state x="512" y="131" key="FileChooserDialogImpl/0.0.1463.783@0.0.1463.783" timestamp="1616346163444" />
+    <state x="327" y="0" key="CommitChangelistDialog2/0.0.1463.783@0.0.1463.783" timestamp="1619549886956" />
+    <state x="139" y="60" key="DiffContextDialog" timestamp="1619549741084">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="139" y="60" key="DiffContextDialog/0.0.1463.783@0.0.1463.783" timestamp="1619549741084" />
+    <state x="512" y="131" key="FileChooserDialogImpl" timestamp="1619549715878">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="512" y="131" key="FileChooserDialogImpl/0.0.1463.783@0.0.1463.783" timestamp="1619549715878" />
     <state x="565" y="294" key="Github.CreateGistDialog" timestamp="1615915154834">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
@@ -881,6 +504,10 @@
       <screen x="0" y="0" width="1463" height="783" />
     </state>
     <state x="241" y="37" key="SettingsEditor/0.0.1463.783@0.0.1463.783" timestamp="1615922665535" />
+    <state x="324" y="124" key="Vcs.Push.Dialog.v2" timestamp="1619550087783">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="324" y="124" key="Vcs.Push.Dialog.v2/0.0.1463.783@0.0.1463.783" timestamp="1619550087783" />
     <state x="557" y="169" key="chooseDestDirectoryDialog" timestamp="1615978618994">
       <screen x="0" y="0" width="1463" height="783" />
     </state>
