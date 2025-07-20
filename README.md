@@ -1,2 +1,2 @@
 # GraphicalJavascriptImage
- My school Bargut project in Android for 2021.
+ My school Bagrut high school project in Android for 2021.
